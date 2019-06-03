@@ -1,0 +1,14 @@
+Package: RMarkov
+Version: 1.0.0
+Date: 2018-1-12
+Title: Numerical Computation of Markov Chains
+Type: Package
+Author: Hiroyuki Okamura
+Maintainer: Hiroyuki Okamura <okamu@hiroshima-u.ac.jp>
+Description: Stationary and transient solutions of Markov chains.
+LinkingTo: Rcpp
+Imports: Rcpp
+Suggests: testthat
+Encoding: UTF-8
+License: MIT + file LICENSE
+RoxygenNote: 6.1.1
