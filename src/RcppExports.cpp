@@ -5,6 +5,293 @@
 
 using namespace Rcpp;
 
+// Cmarkovstsen_gs
+List Cmarkovstsen_gs(S4 Q, NumericVector x0, NumericVector y, NumericVector pis, int steps, double rtol, int maxiter);
+RcppExport SEXP _RMarkov_Cmarkovstsen_gs(SEXP QSEXP, SEXP x0SEXP, SEXP ySEXP, SEXP pisSEXP, SEXP stepsSEXP, SEXP rtolSEXP, SEXP maxiterSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type pis(pisSEXP);
+    Rcpp::traits::input_parameter< int >::type steps(stepsSEXP);
+    Rcpp::traits::input_parameter< double >::type rtol(rtolSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmarkovstsen_gs(Q, x0, y, pis, steps, rtol, maxiter));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Ctran_unif_vec
+List Ctran_unif_vec(bool trans, S4 A, NumericVector x0, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Ctran_unif_vec(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Ctran_unif_vec(trans, A, x0, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Ctran_unif_mat
+List Ctran_unif_mat(bool trans, S4 A, NumericMatrix x0, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Ctran_unif_mat(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Ctran_unif_mat(trans, A, x0, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Ctran_unif_rwd_vec_vec
+List Ctran_unif_rwd_vec_vec(bool trans, S4 A, NumericVector x0, NumericVector rwd, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Ctran_unif_rwd_vec_vec(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP rwdSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type rwd(rwdSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Ctran_unif_rwd_vec_vec(trans, A, x0, rwd, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Ctran_unif_rwd_vec_mat
+List Ctran_unif_rwd_vec_mat(bool trans, S4 A, NumericVector x0, NumericMatrix rwd, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Ctran_unif_rwd_vec_mat(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP rwdSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type rwd(rwdSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Ctran_unif_rwd_vec_mat(trans, A, x0, rwd, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Ctran_unif_rwd_mat_mat
+List Ctran_unif_rwd_mat_mat(bool trans, S4 A, NumericMatrix x0, NumericMatrix rwd, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Ctran_unif_rwd_mat_mat(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP rwdSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type rwd(rwdSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Ctran_unif_rwd_mat_mat(trans, A, x0, rwd, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmarkovst_gth
+NumericVector Cmarkovst_gth(S4 Q);
+RcppExport SEXP _RMarkov_Cmarkovst_gth(SEXP QSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmarkovst_gth(Q));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmarkovst_power
+List Cmarkovst_power(S4 Q, NumericVector x0, double ufact, int steps, double rtol, int maxiter);
+RcppExport SEXP _RMarkov_Cmarkovst_power(SEXP QSEXP, SEXP x0SEXP, SEXP ufactSEXP, SEXP stepsSEXP, SEXP rtolSEXP, SEXP maxiterSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< int >::type steps(stepsSEXP);
+    Rcpp::traits::input_parameter< double >::type rtol(rtolSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmarkovst_power(Q, x0, ufact, steps, rtol, maxiter));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmarkovst_gs
+List Cmarkovst_gs(S4 Q, NumericVector x0, int steps, double rtol, int maxiter);
+RcppExport SEXP _RMarkov_Cmarkovst_gs(SEXP QSEXP, SEXP x0SEXP, SEXP stepsSEXP, SEXP rtolSEXP, SEXP maxiterSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< int >::type steps(stepsSEXP);
+    Rcpp::traits::input_parameter< double >::type rtol(rtolSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmarkovst_gs(Q, x0, steps, rtol, maxiter));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmexp_mix_unif_vec
+NumericVector Cmexp_mix_unif_vec(bool trans, S4 A, NumericVector x, NumericVector w, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Cmexp_mix_unif_vec(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP wSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type w(wSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmexp_mix_unif_vec(trans, A, x, w, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmexp_mix_unif_mat
+NumericMatrix Cmexp_mix_unif_mat(bool trans, S4 A, NumericMatrix x, NumericVector w, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Cmexp_mix_unif_mat(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP wSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type w(wSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmexp_mix_unif_mat(trans, A, x, w, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmexpint_mix_unif_vec
+List Cmexpint_mix_unif_vec(bool trans, S4 A, NumericVector x, NumericVector w, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Cmexpint_mix_unif_vec(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP wSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type w(wSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmexpint_mix_unif_vec(trans, A, x, w, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmexpint_mix_unif_mat
+List Cmexpint_mix_unif_mat(bool trans, S4 A, NumericMatrix x, NumericVector w, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Cmexpint_mix_unif_mat(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP wSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type w(wSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmexpint_mix_unif_mat(trans, A, x, w, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmexp_unif_vec
+NumericVector Cmexp_unif_vec(bool trans, S4 A, NumericVector x, double t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Cmexp_unif_vec(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmexp_unif_vec(trans, A, x, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmexp_unif_mat
+NumericMatrix Cmexp_unif_mat(bool trans, S4 A, NumericMatrix x, double t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Cmexp_unif_mat(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmexp_unif_mat(trans, A, x, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmexpint_unif_vec
+List Cmexpint_unif_vec(bool trans, S4 A, NumericVector x, double t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Cmexpint_unif_vec(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmexpint_unif_vec(trans, A, x, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmexpint_unif_mat
+List Cmexpint_unif_mat(bool trans, S4 A, NumericMatrix x, double t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Cmexpint_unif_mat(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmexpint_unif_mat(trans, A, x, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
 // C_ddot
 double C_ddot(NumericVector x, NumericVector y);
 RcppExport SEXP _RMarkov_C_ddot(SEXP xSEXP, SEXP ySEXP) {
@@ -18,13 +305,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // C_ddot2
-double C_ddot2(S4 x, S4 y);
+double C_ddot2(S4 x, NumericVector y);
 RcppExport SEXP _RMarkov_C_ddot2(SEXP xSEXP, SEXP ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< S4 >::type x(xSEXP);
-    Rcpp::traits::input_parameter< S4 >::type y(ySEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
     rcpp_result_gen = Rcpp::wrap(C_ddot2(x, y));
     return rcpp_result_gen;
 END_RCPP
@@ -40,17 +327,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// C_dasum2
-double C_dasum2(S4 x);
-RcppExport SEXP _RMarkov_C_dasum2(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< S4 >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(C_dasum2(x));
-    return rcpp_result_gen;
-END_RCPP
-}
 // C_idamax
 double C_idamax(NumericVector x);
 RcppExport SEXP _RMarkov_C_idamax(SEXP xSEXP) {
@@ -59,17 +335,6 @@ BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
     rcpp_result_gen = Rcpp::wrap(C_idamax(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// C_idamax2
-double C_idamax2(S4 x);
-RcppExport SEXP _RMarkov_C_idamax2(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< S4 >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(C_idamax2(x));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -134,111 +399,1769 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// C_dgemv
-NumericVector C_dgemv(bool trans, double alpha, NumericMatrix A, NumericVector x, double beta, NumericVector y);
-RcppExport SEXP _RMarkov_C_dgemv(SEXP transSEXP, SEXP alphaSEXP, SEXP ASEXP, SEXP xSEXP, SEXP betaSEXP, SEXP ySEXP) {
+// C_dgemvT
+NumericVector C_dgemvT(double alpha, NumericMatrix A, NumericVector x, double beta, NumericVector y);
+RcppExport SEXP _RMarkov_C_dgemvT(SEXP alphaSEXP, SEXP ASEXP, SEXP xSEXP, SEXP betaSEXP, SEXP ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
     Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
     Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
-    rcpp_result_gen = Rcpp::wrap(C_dgemv(trans, alpha, A, x, beta, y));
+    rcpp_result_gen = Rcpp::wrap(C_dgemvT(alpha, A, x, beta, y));
     return rcpp_result_gen;
 END_RCPP
 }
-// C_dger
-NumericMatrix C_dger(bool trans, double alpha, NumericVector x, NumericVector y, NumericMatrix A);
-RcppExport SEXP _RMarkov_C_dger(SEXP transSEXP, SEXP alphaSEXP, SEXP xSEXP, SEXP ySEXP, SEXP ASEXP) {
+// C_dgemvN
+NumericVector C_dgemvN(double alpha, NumericMatrix A, NumericVector x, double beta, NumericVector y);
+RcppExport SEXP _RMarkov_C_dgemvN(SEXP alphaSEXP, SEXP ASEXP, SEXP xSEXP, SEXP betaSEXP, SEXP ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemvN(alpha, A, x, beta, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgerT
+NumericMatrix C_dgerT(double alpha, NumericVector x, NumericVector y, NumericMatrix A);
+RcppExport SEXP _RMarkov_C_dgerT(SEXP alphaSEXP, SEXP xSEXP, SEXP ySEXP, SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
     Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
-    rcpp_result_gen = Rcpp::wrap(C_dger(trans, alpha, x, y, A));
+    rcpp_result_gen = Rcpp::wrap(C_dgerT(alpha, x, y, A));
     return rcpp_result_gen;
 END_RCPP
 }
-// C_dgemm
-NumericMatrix C_dgemm(bool transA, bool trnasB, double alpha, NumericMatrix A, NumericMatrix B, double beta, NumericMatrix C);
-RcppExport SEXP _RMarkov_C_dgemm(SEXP transASEXP, SEXP trnasBSEXP, SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+// C_dgerN
+NumericMatrix C_dgerN(double alpha, NumericVector x, NumericVector y, NumericMatrix A);
+RcppExport SEXP _RMarkov_C_dgerN(SEXP alphaSEXP, SEXP xSEXP, SEXP ySEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< bool >::type transA(transASEXP);
-    Rcpp::traits::input_parameter< bool >::type trnasB(trnasBSEXP);
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgerN(alpha, x, y, A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNN
+NumericMatrix C_dgemmNN(double alpha, NumericMatrix A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNN(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
     Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
     Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
     Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
     Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
-    rcpp_result_gen = Rcpp::wrap(C_dgemm(transA, trnasB, alpha, A, B, beta, C));
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNN(alpha, A, B, beta, C));
     return rcpp_result_gen;
 END_RCPP
 }
-// C_create_csr
-List C_create_csr(NumericMatrix A);
-RcppExport SEXP _RMarkov_C_create_csr(SEXP ASEXP) {
+// C_dgemmTN
+NumericMatrix C_dgemmTN(double alpha, NumericMatrix A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTN(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
     Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
-    rcpp_result_gen = Rcpp::wrap(C_create_csr(A));
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTN(alpha, A, B, beta, C));
     return rcpp_result_gen;
 END_RCPP
 }
-// C_create_dense
-NumericMatrix C_create_dense(S4 A);
-RcppExport SEXP _RMarkov_C_create_dense(SEXP ASEXP) {
+// C_dgemmNT
+NumericMatrix C_dgemmNT(double alpha, NumericMatrix A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNT(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
-    rcpp_result_gen = Rcpp::wrap(C_create_dense(A));
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNT(alpha, A, B, beta, C));
     return rcpp_result_gen;
 END_RCPP
 }
-// C_dgemv2
-NumericVector C_dgemv2(bool trans, double alpha, S4 A, NumericVector x, double beta, NumericVector y);
-RcppExport SEXP _RMarkov_C_dgemv2(SEXP transSEXP, SEXP alphaSEXP, SEXP ASEXP, SEXP xSEXP, SEXP betaSEXP, SEXP ySEXP) {
+// C_dgemmTT
+NumericMatrix C_dgemmTT(double alpha, NumericMatrix A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTT(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTT(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemvN_coo
+NumericVector C_dgemvN_coo(double alpha, S4 A, NumericVector x, double beta, NumericVector y);
+RcppExport SEXP _RMarkov_C_dgemvN_coo(SEXP alphaSEXP, SEXP ASEXP, SEXP xSEXP, SEXP betaSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
     Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
-    rcpp_result_gen = Rcpp::wrap(C_dgemv2(trans, alpha, A, x, beta, y));
+    rcpp_result_gen = Rcpp::wrap(C_dgemvN_coo(alpha, A, x, beta, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemvT_coo
+NumericVector C_dgemvT_coo(double alpha, S4 A, NumericVector x, double beta, NumericVector y);
+RcppExport SEXP _RMarkov_C_dgemvT_coo(SEXP alphaSEXP, SEXP ASEXP, SEXP xSEXP, SEXP betaSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemvT_coo(alpha, A, x, beta, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgerN_coo
+S4 C_dgerN_coo(double alpha, NumericVector x, NumericVector y, S4 A);
+RcppExport SEXP _RMarkov_C_dgerN_coo(SEXP alphaSEXP, SEXP xSEXP, SEXP ySEXP, SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgerN_coo(alpha, x, y, A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgerT_coo
+S4 C_dgerT_coo(double alpha, NumericVector x, NumericVector y, S4 A);
+RcppExport SEXP _RMarkov_C_dgerT_coo(SEXP alphaSEXP, SEXP xSEXP, SEXP ySEXP, SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgerT_coo(alpha, x, y, A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNN_coo
+NumericMatrix C_dgemmNN_coo(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNN_coo(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNN_coo(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTN_coo
+NumericMatrix C_dgemmTN_coo(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTN_coo(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTN_coo(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNT_coo
+NumericMatrix C_dgemmNT_coo(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNT_coo(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNT_coo(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTT_coo
+NumericMatrix C_dgemmTT_coo(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTT_coo(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTT_coo(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNN2_coo
+NumericMatrix C_dgemmNN2_coo(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNN2_coo(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNN2_coo(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTN2_coo
+NumericMatrix C_dgemmTN2_coo(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTN2_coo(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTN2_coo(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNT2_coo
+NumericMatrix C_dgemmNT2_coo(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNT2_coo(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNT2_coo(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTT2_coo
+NumericMatrix C_dgemmTT2_coo(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTT2_coo(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTT2_coo(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemvN_csc
+NumericVector C_dgemvN_csc(double alpha, S4 A, NumericVector x, double beta, NumericVector y);
+RcppExport SEXP _RMarkov_C_dgemvN_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP xSEXP, SEXP betaSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemvN_csc(alpha, A, x, beta, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemvT_csc
+NumericVector C_dgemvT_csc(double alpha, S4 A, NumericVector x, double beta, NumericVector y);
+RcppExport SEXP _RMarkov_C_dgemvT_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP xSEXP, SEXP betaSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemvT_csc(alpha, A, x, beta, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgerN_csc
+S4 C_dgerN_csc(double alpha, NumericVector x, NumericVector y, S4 A);
+RcppExport SEXP _RMarkov_C_dgerN_csc(SEXP alphaSEXP, SEXP xSEXP, SEXP ySEXP, SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgerN_csc(alpha, x, y, A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgerT_csc
+S4 C_dgerT_csc(double alpha, NumericVector x, NumericVector y, S4 A);
+RcppExport SEXP _RMarkov_C_dgerT_csc(SEXP alphaSEXP, SEXP xSEXP, SEXP ySEXP, SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgerT_csc(alpha, x, y, A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNN_csc
+NumericMatrix C_dgemmNN_csc(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNN_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNN_csc(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTN_csc
+NumericMatrix C_dgemmTN_csc(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTN_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTN_csc(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNT_csc
+NumericMatrix C_dgemmNT_csc(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNT_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNT_csc(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTT_csc
+NumericMatrix C_dgemmTT_csc(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTT_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTT_csc(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNN2_csc
+NumericMatrix C_dgemmNN2_csc(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNN2_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNN2_csc(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTN2_csc
+NumericMatrix C_dgemmTN2_csc(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTN2_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTN2_csc(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNT2_csc
+NumericMatrix C_dgemmNT2_csc(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNT2_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNT2_csc(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTT2_csc
+NumericMatrix C_dgemmTT2_csc(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTT2_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTT2_csc(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemvN_csr
+NumericVector C_dgemvN_csr(double alpha, S4 A, NumericVector x, double beta, NumericVector y);
+RcppExport SEXP _RMarkov_C_dgemvN_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP xSEXP, SEXP betaSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemvN_csr(alpha, A, x, beta, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemvT_csr
+NumericVector C_dgemvT_csr(double alpha, S4 A, NumericVector x, double beta, NumericVector y);
+RcppExport SEXP _RMarkov_C_dgemvT_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP xSEXP, SEXP betaSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemvT_csr(alpha, A, x, beta, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgerN_csr
+S4 C_dgerN_csr(double alpha, NumericVector x, NumericVector y, S4 A);
+RcppExport SEXP _RMarkov_C_dgerN_csr(SEXP alphaSEXP, SEXP xSEXP, SEXP ySEXP, SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgerN_csr(alpha, x, y, A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgerT_csr
+S4 C_dgerT_csr(double alpha, NumericVector x, NumericVector y, S4 A);
+RcppExport SEXP _RMarkov_C_dgerT_csr(SEXP alphaSEXP, SEXP xSEXP, SEXP ySEXP, SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgerT_csr(alpha, x, y, A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNN_csr
+NumericMatrix C_dgemmNN_csr(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNN_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNN_csr(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTN_csr
+NumericMatrix C_dgemmTN_csr(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTN_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTN_csr(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNT_csr
+NumericMatrix C_dgemmNT_csr(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNT_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNT_csr(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTT_csr
+NumericMatrix C_dgemmTT_csr(double alpha, S4 A, NumericMatrix B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTT_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTT_csr(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNN2_csr
+NumericMatrix C_dgemmNN2_csr(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNN2_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNN2_csr(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTN2_csr
+NumericMatrix C_dgemmTN2_csr(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTN2_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTN2_csr(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmNT2_csr
+NumericMatrix C_dgemmNT2_csr(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmNT2_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmNT2_csr(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_dgemmTT2_csr
+NumericMatrix C_dgemmTT2_csr(double alpha, NumericMatrix A, S4 B, double beta, NumericMatrix C);
+RcppExport SEXP _RMarkov_C_dgemmTT2_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP BSEXP, SEXP betaSEXP, SEXP CSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< S4 >::type B(BSEXP);
+    Rcpp::traits::input_parameter< double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type C(CSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_dgemmTT2_csr(alpha, A, B, beta, C));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_unif_dense
+List C_unif_dense(NumericMatrix Q, double ufactor);
+RcppExport SEXP _RMarkov_C_unif_dense(SEXP QSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_unif_dense(Q, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_unif_csr
+List C_unif_csr(S4 Q, double ufactor);
+RcppExport SEXP _RMarkov_C_unif_csr(SEXP QSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_unif_csr(Q, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_unif_csc
+List C_unif_csc(S4 Q, double ufactor);
+RcppExport SEXP _RMarkov_C_unif_csc(SEXP QSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_unif_csc(Q, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_unif_coo
+List C_unif_coo(S4 Q, double ufactor);
+RcppExport SEXP _RMarkov_C_unif_coo(SEXP QSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_unif_coo(Q, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_vecT_dense
+NumericVector C_mexp_vecT_dense(NumericMatrix Q, double t, NumericVector x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_vecT_dense(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_vecT_dense(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_vecN_dense
+NumericVector C_mexp_vecN_dense(NumericMatrix Q, double t, NumericVector x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_vecN_dense(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_vecN_dense(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_vecT_csr
+NumericVector C_mexp_vecT_csr(S4 Q, double t, NumericVector x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_vecT_csr(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_vecT_csr(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_vecN_csr
+NumericVector C_mexp_vecN_csr(S4 Q, double t, NumericVector x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_vecN_csr(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_vecN_csr(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_vecT_csc
+NumericVector C_mexp_vecT_csc(S4 Q, double t, NumericVector x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_vecT_csc(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_vecT_csc(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_vecN_csc
+NumericVector C_mexp_vecN_csc(S4 Q, double t, NumericVector x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_vecN_csc(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_vecN_csc(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_vecT_coo
+NumericVector C_mexp_vecT_coo(S4 Q, double t, NumericVector x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_vecT_coo(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_vecT_coo(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_vecN_coo
+NumericVector C_mexp_vecN_coo(S4 Q, double t, NumericVector x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_vecN_coo(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_vecN_coo(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_matN_dense
+NumericMatrix C_mexp_matN_dense(NumericMatrix Q, double t, NumericMatrix x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_matN_dense(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_matN_dense(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_matT_dense
+NumericMatrix C_mexp_matT_dense(NumericMatrix Q, double t, NumericMatrix x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_matT_dense(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_matT_dense(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_matN_csr
+NumericMatrix C_mexp_matN_csr(S4 Q, double t, NumericMatrix x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_matN_csr(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_matN_csr(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_matT_csr
+NumericMatrix C_mexp_matT_csr(S4 Q, double t, NumericMatrix x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_matT_csr(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_matT_csr(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_matN_csc
+NumericMatrix C_mexp_matN_csc(S4 Q, double t, NumericMatrix x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_matN_csc(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_matN_csc(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_matT_csc
+NumericMatrix C_mexp_matT_csc(S4 Q, double t, NumericMatrix x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_matT_csc(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_matT_csc(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_matN_coo
+NumericMatrix C_mexp_matN_coo(S4 Q, double t, NumericMatrix x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_matN_coo(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_matN_coo(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexp_matT_coo
+NumericMatrix C_mexp_matT_coo(S4 Q, double t, NumericMatrix x, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexp_matT_coo(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexp_matT_coo(Q, t, x, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_vecT_dense
+List C_mexpint_vecT_dense(NumericMatrix Q, double t, NumericVector x, NumericVector cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_vecT_dense(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_vecT_dense(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_vecN_dense
+List C_mexpint_vecN_dense(NumericMatrix Q, double t, NumericVector x, NumericVector cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_vecN_dense(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_vecN_dense(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_vecT_csr
+List C_mexpint_vecT_csr(S4 Q, double t, NumericVector x, NumericVector cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_vecT_csr(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_vecT_csr(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_vecN_csr
+List C_mexpint_vecN_csr(S4 Q, double t, NumericVector x, NumericVector cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_vecN_csr(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_vecN_csr(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_vecT_csc
+List C_mexpint_vecT_csc(S4 Q, double t, NumericVector x, NumericVector cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_vecT_csc(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_vecT_csc(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_vecN_csc
+List C_mexpint_vecN_csc(S4 Q, double t, NumericVector x, NumericVector cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_vecN_csc(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_vecN_csc(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_vecT_coo
+List C_mexpint_vecT_coo(S4 Q, double t, NumericVector x, NumericVector cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_vecT_coo(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_vecT_coo(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_vecN_coo
+List C_mexpint_vecN_coo(S4 Q, double t, NumericVector x, NumericVector cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_vecN_coo(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_vecN_coo(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_matT_dense
+List C_mexpint_matT_dense(NumericMatrix Q, double t, NumericMatrix x, NumericMatrix cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_matT_dense(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_matT_dense(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_matN_dense
+List C_mexpint_matN_dense(NumericMatrix Q, double t, NumericMatrix x, NumericMatrix cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_matN_dense(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_matN_dense(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_matT_csr
+List C_mexpint_matT_csr(S4 Q, double t, NumericMatrix x, NumericMatrix cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_matT_csr(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_matT_csr(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_matN_csr
+List C_mexpint_matN_csr(S4 Q, double t, NumericMatrix x, NumericMatrix cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_matN_csr(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_matN_csr(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_matT_csc
+List C_mexpint_matT_csc(S4 Q, double t, NumericMatrix x, NumericMatrix cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_matT_csc(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_matT_csc(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_matN_csc
+List C_mexpint_matN_csc(S4 Q, double t, NumericMatrix x, NumericMatrix cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_matN_csc(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_matN_csc(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_matT_coo
+List C_mexpint_matT_coo(S4 Q, double t, NumericMatrix x, NumericMatrix cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_matT_coo(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_matT_coo(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_mexpint_matN_coo
+List C_mexpint_matN_coo(S4 Q, double t, NumericMatrix x, NumericMatrix cy, double eps, double ufactor);
+RcppExport SEXP _RMarkov_C_mexpint_matN_coo(SEXP QSEXP, SEXP tSEXP, SEXP xSEXP, SEXP cySEXP, SEXP epsSEXP, SEXP ufactorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type cy(cySEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< double >::type ufactor(ufactorSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_mexpint_matN_coo(Q, t, x, cy, eps, ufactor));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gth_dense
+NumericVector C_gth_dense(NumericMatrix Q);
+RcppExport SEXP _RMarkov_C_gth_dense(SEXP QSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type Q(QSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gth_dense(Q));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gth_csr
+NumericVector C_gth_csr(S4 Q);
+RcppExport SEXP _RMarkov_C_gth_csr(SEXP QSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gth_csr(Q));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gth_csc
+NumericVector C_gth_csc(S4 Q);
+RcppExport SEXP _RMarkov_C_gth_csc(SEXP QSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gth_csc(Q));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gth_coo
+NumericVector C_gth_coo(S4 Q);
+RcppExport SEXP _RMarkov_C_gth_coo(SEXP QSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gth_coo(Q));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_sparse_nnz
+int C_sparse_nnz(NumericMatrix A);
+RcppExport SEXP _RMarkov_C_sparse_nnz(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_sparse_nnz(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_nrow_dense
+NumericVector C_nrow_dense(NumericMatrix A);
+RcppExport SEXP _RMarkov_C_nrow_dense(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_nrow_dense(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_nrow_csr
+NumericVector C_nrow_csr(S4 A);
+RcppExport SEXP _RMarkov_C_nrow_csr(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_nrow_csr(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_nrow_csc
+NumericVector C_nrow_csc(S4 A);
+RcppExport SEXP _RMarkov_C_nrow_csc(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_nrow_csc(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_nrow_coo
+NumericVector C_nrow_coo(S4 A);
+RcppExport SEXP _RMarkov_C_nrow_coo(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_nrow_coo(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_create_csr
+void C_create_csr(NumericMatrix A, NumericVector value, IntegerVector ptr, IntegerVector ind);
+RcppExport SEXP _RMarkov_C_create_csr(SEXP ASEXP, SEXP valueSEXP, SEXP ptrSEXP, SEXP indSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type value(valueSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type ptr(ptrSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type ind(indSEXP);
+    C_create_csr(A, value, ptr, ind);
+    return R_NilValue;
+END_RCPP
+}
+// C_sparse_to_dense_csr
+void C_sparse_to_dense_csr(S4 A, NumericMatrix B);
+RcppExport SEXP _RMarkov_C_sparse_to_dense_csr(SEXP ASEXP, SEXP BSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    C_sparse_to_dense_csr(A, B);
+    return R_NilValue;
+END_RCPP
+}
+// C_create_csc
+void C_create_csc(NumericMatrix A, NumericVector value, IntegerVector ptr, IntegerVector ind);
+RcppExport SEXP _RMarkov_C_create_csc(SEXP ASEXP, SEXP valueSEXP, SEXP ptrSEXP, SEXP indSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type value(valueSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type ptr(ptrSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type ind(indSEXP);
+    C_create_csc(A, value, ptr, ind);
+    return R_NilValue;
+END_RCPP
+}
+// C_sparse_to_dense_csc
+void C_sparse_to_dense_csc(S4 A, NumericMatrix B);
+RcppExport SEXP _RMarkov_C_sparse_to_dense_csc(SEXP ASEXP, SEXP BSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    C_sparse_to_dense_csc(A, B);
+    return R_NilValue;
+END_RCPP
+}
+// C_create_coo
+void C_create_coo(NumericMatrix A, NumericVector value, IntegerVector row, IntegerVector col);
+RcppExport SEXP _RMarkov_C_create_coo(SEXP ASEXP, SEXP valueSEXP, SEXP rowSEXP, SEXP colSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type value(valueSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type row(rowSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type col(colSEXP);
+    C_create_coo(A, value, row, col);
+    return R_NilValue;
+END_RCPP
+}
+// C_sparse_to_dense_coo
+void C_sparse_to_dense_coo(S4 A, NumericMatrix B);
+RcppExport SEXP _RMarkov_C_sparse_to_dense_coo(SEXP ASEXP, SEXP BSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type B(BSEXP);
+    C_sparse_to_dense_coo(A, B);
+    return R_NilValue;
+END_RCPP
+}
+// C_diag_dense
+NumericVector C_diag_dense(NumericMatrix A);
+RcppExport SEXP _RMarkov_C_diag_dense(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_diag_dense(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_diag_csr
+NumericVector C_diag_csr(S4 A);
+RcppExport SEXP _RMarkov_C_diag_csr(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_diag_csr(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_diag_csc
+NumericVector C_diag_csc(S4 A);
+RcppExport SEXP _RMarkov_C_diag_csc(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_diag_csc(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_diag_coo
+NumericVector C_diag_coo(S4 A);
+RcppExport SEXP _RMarkov_C_diag_coo(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(C_diag_coo(A));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_diag_set_dense
+void C_diag_set_dense(NumericMatrix A, NumericVector x);
+RcppExport SEXP _RMarkov_C_diag_set_dense(SEXP ASEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    C_diag_set_dense(A, x);
+    return R_NilValue;
+END_RCPP
+}
+// C_diag_set_csr
+void C_diag_set_csr(S4 A, NumericVector x);
+RcppExport SEXP _RMarkov_C_diag_set_csr(SEXP ASEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    C_diag_set_csr(A, x);
+    return R_NilValue;
+END_RCPP
+}
+// C_diag_set_csc
+void C_diag_set_csc(S4 A, NumericVector x);
+RcppExport SEXP _RMarkov_C_diag_set_csc(SEXP ASEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    C_diag_set_csc(A, x);
+    return R_NilValue;
+END_RCPP
+}
+// C_diag_set_coo
+void C_diag_set_coo(S4 A, NumericVector x);
+RcppExport SEXP _RMarkov_C_diag_set_coo(SEXP ASEXP, SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    C_diag_set_coo(A, x);
+    return R_NilValue;
+END_RCPP
+}
+// C_poi_rightbound
+int C_poi_rightbound(double lambda, double eps);
+RcppExport SEXP _RMarkov_C_poi_rightbound(SEXP lambdaSEXP, SEXP epsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_poi_rightbound(lambda, eps));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_poi_pmf
+List C_poi_pmf(double lambda, int left, int right);
+RcppExport SEXP _RMarkov_C_poi_pmf(SEXP lambdaSEXP, SEXP leftSEXP, SEXP rightSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< int >::type left(leftSEXP);
+    Rcpp::traits::input_parameter< int >::type right(rightSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_poi_pmf(lambda, left, right));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_poi_cpmf
+List C_poi_cpmf(double lambda, int left, int right);
+RcppExport SEXP _RMarkov_C_poi_cpmf(SEXP lambdaSEXP, SEXP leftSEXP, SEXP rightSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type lambda(lambdaSEXP);
+    Rcpp::traits::input_parameter< int >::type left(leftSEXP);
+    Rcpp::traits::input_parameter< int >::type right(rightSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_poi_cpmf(lambda, left, right));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gsstep_vecN_dense
+NumericVector C_gsstep_vecN_dense(double alpha, NumericMatrix A, double sigma, double omega, NumericVector b, NumericVector x0);
+RcppExport SEXP _RMarkov_C_gsstep_vecN_dense(SEXP alphaSEXP, SEXP ASEXP, SEXP sigmaSEXP, SEXP omegaSEXP, SEXP bSEXP, SEXP x0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    Rcpp::traits::input_parameter< double >::type omega(omegaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type b(bSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gsstep_vecN_dense(alpha, A, sigma, omega, b, x0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gsstep_vecT_dense
+NumericVector C_gsstep_vecT_dense(double alpha, NumericMatrix A, double sigma, double omega, NumericVector b, NumericVector x0);
+RcppExport SEXP _RMarkov_C_gsstep_vecT_dense(SEXP alphaSEXP, SEXP ASEXP, SEXP sigmaSEXP, SEXP omegaSEXP, SEXP bSEXP, SEXP x0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    Rcpp::traits::input_parameter< double >::type omega(omegaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type b(bSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gsstep_vecT_dense(alpha, A, sigma, omega, b, x0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gsstep_vecN_csr
+NumericVector C_gsstep_vecN_csr(double alpha, S4 A, double sigma, double omega, NumericVector b, NumericVector x0);
+RcppExport SEXP _RMarkov_C_gsstep_vecN_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP sigmaSEXP, SEXP omegaSEXP, SEXP bSEXP, SEXP x0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    Rcpp::traits::input_parameter< double >::type omega(omegaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type b(bSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gsstep_vecN_csr(alpha, A, sigma, omega, b, x0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gsstep_vecT_csc
+NumericVector C_gsstep_vecT_csc(double alpha, S4 A, double sigma, double omega, NumericVector b, NumericVector x0);
+RcppExport SEXP _RMarkov_C_gsstep_vecT_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP sigmaSEXP, SEXP omegaSEXP, SEXP bSEXP, SEXP x0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    Rcpp::traits::input_parameter< double >::type omega(omegaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type b(bSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gsstep_vecT_csc(alpha, A, sigma, omega, b, x0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gsstep_matN_dense
+NumericMatrix C_gsstep_matN_dense(double alpha, NumericMatrix A, double sigma, double omega, NumericMatrix b, NumericMatrix x0);
+RcppExport SEXP _RMarkov_C_gsstep_matN_dense(SEXP alphaSEXP, SEXP ASEXP, SEXP sigmaSEXP, SEXP omegaSEXP, SEXP bSEXP, SEXP x0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    Rcpp::traits::input_parameter< double >::type omega(omegaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type b(bSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x0(x0SEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gsstep_matN_dense(alpha, A, sigma, omega, b, x0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gsstep_matT_dense
+NumericMatrix C_gsstep_matT_dense(double alpha, NumericMatrix A, double sigma, double omega, NumericMatrix b, NumericMatrix x0);
+RcppExport SEXP _RMarkov_C_gsstep_matT_dense(SEXP alphaSEXP, SEXP ASEXP, SEXP sigmaSEXP, SEXP omegaSEXP, SEXP bSEXP, SEXP x0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type A(ASEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    Rcpp::traits::input_parameter< double >::type omega(omegaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type b(bSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x0(x0SEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gsstep_matT_dense(alpha, A, sigma, omega, b, x0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gsstep_matN_csr
+NumericMatrix C_gsstep_matN_csr(double alpha, S4 A, double sigma, double omega, NumericMatrix b, NumericMatrix x0);
+RcppExport SEXP _RMarkov_C_gsstep_matN_csr(SEXP alphaSEXP, SEXP ASEXP, SEXP sigmaSEXP, SEXP omegaSEXP, SEXP bSEXP, SEXP x0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    Rcpp::traits::input_parameter< double >::type omega(omegaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type b(bSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x0(x0SEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gsstep_matN_csr(alpha, A, sigma, omega, b, x0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_gsstep_matT_csc
+NumericMatrix C_gsstep_matT_csc(double alpha, S4 A, double sigma, double omega, NumericMatrix b, NumericMatrix x0);
+RcppExport SEXP _RMarkov_C_gsstep_matT_csc(SEXP alphaSEXP, SEXP ASEXP, SEXP sigmaSEXP, SEXP omegaSEXP, SEXP bSEXP, SEXP x0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    Rcpp::traits::input_parameter< double >::type omega(omegaSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type b(bSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x0(x0SEXP);
+    rcpp_result_gen = Rcpp::wrap(C_gsstep_matT_csc(alpha, A, sigma, omega, b, x0));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_RMarkov_Cmarkovstsen_gs", (DL_FUNC) &_RMarkov_Cmarkovstsen_gs, 7},
+    {"_RMarkov_Ctran_unif_vec", (DL_FUNC) &_RMarkov_Ctran_unif_vec, 7},
+    {"_RMarkov_Ctran_unif_mat", (DL_FUNC) &_RMarkov_Ctran_unif_mat, 7},
+    {"_RMarkov_Ctran_unif_rwd_vec_vec", (DL_FUNC) &_RMarkov_Ctran_unif_rwd_vec_vec, 8},
+    {"_RMarkov_Ctran_unif_rwd_vec_mat", (DL_FUNC) &_RMarkov_Ctran_unif_rwd_vec_mat, 8},
+    {"_RMarkov_Ctran_unif_rwd_mat_mat", (DL_FUNC) &_RMarkov_Ctran_unif_rwd_mat_mat, 8},
+    {"_RMarkov_Cmarkovst_gth", (DL_FUNC) &_RMarkov_Cmarkovst_gth, 1},
+    {"_RMarkov_Cmarkovst_power", (DL_FUNC) &_RMarkov_Cmarkovst_power, 6},
+    {"_RMarkov_Cmarkovst_gs", (DL_FUNC) &_RMarkov_Cmarkovst_gs, 5},
+    {"_RMarkov_Cmexp_mix_unif_vec", (DL_FUNC) &_RMarkov_Cmexp_mix_unif_vec, 8},
+    {"_RMarkov_Cmexp_mix_unif_mat", (DL_FUNC) &_RMarkov_Cmexp_mix_unif_mat, 8},
+    {"_RMarkov_Cmexpint_mix_unif_vec", (DL_FUNC) &_RMarkov_Cmexpint_mix_unif_vec, 8},
+    {"_RMarkov_Cmexpint_mix_unif_mat", (DL_FUNC) &_RMarkov_Cmexpint_mix_unif_mat, 8},
+    {"_RMarkov_Cmexp_unif_vec", (DL_FUNC) &_RMarkov_Cmexp_unif_vec, 7},
+    {"_RMarkov_Cmexp_unif_mat", (DL_FUNC) &_RMarkov_Cmexp_unif_mat, 7},
+    {"_RMarkov_Cmexpint_unif_vec", (DL_FUNC) &_RMarkov_Cmexpint_unif_vec, 7},
+    {"_RMarkov_Cmexpint_unif_mat", (DL_FUNC) &_RMarkov_Cmexpint_unif_mat, 7},
     {"_RMarkov_C_ddot", (DL_FUNC) &_RMarkov_C_ddot, 2},
     {"_RMarkov_C_ddot2", (DL_FUNC) &_RMarkov_C_ddot2, 2},
     {"_RMarkov_C_dasum", (DL_FUNC) &_RMarkov_C_dasum, 1},
-    {"_RMarkov_C_dasum2", (DL_FUNC) &_RMarkov_C_dasum2, 1},
     {"_RMarkov_C_idamax", (DL_FUNC) &_RMarkov_C_idamax, 1},
-    {"_RMarkov_C_idamax2", (DL_FUNC) &_RMarkov_C_idamax2, 1},
     {"_RMarkov_C_dcopy", (DL_FUNC) &_RMarkov_C_dcopy, 2},
     {"_RMarkov_C_dcopy2", (DL_FUNC) &_RMarkov_C_dcopy2, 2},
     {"_RMarkov_C_dscal", (DL_FUNC) &_RMarkov_C_dscal, 2},
     {"_RMarkov_C_daxpy", (DL_FUNC) &_RMarkov_C_daxpy, 3},
     {"_RMarkov_C_dfill", (DL_FUNC) &_RMarkov_C_dfill, 2},
-    {"_RMarkov_C_dgemv", (DL_FUNC) &_RMarkov_C_dgemv, 6},
-    {"_RMarkov_C_dger", (DL_FUNC) &_RMarkov_C_dger, 5},
-    {"_RMarkov_C_dgemm", (DL_FUNC) &_RMarkov_C_dgemm, 7},
-    {"_RMarkov_C_create_csr", (DL_FUNC) &_RMarkov_C_create_csr, 1},
-    {"_RMarkov_C_create_dense", (DL_FUNC) &_RMarkov_C_create_dense, 1},
-    {"_RMarkov_C_dgemv2", (DL_FUNC) &_RMarkov_C_dgemv2, 6},
+    {"_RMarkov_C_dgemvT", (DL_FUNC) &_RMarkov_C_dgemvT, 5},
+    {"_RMarkov_C_dgemvN", (DL_FUNC) &_RMarkov_C_dgemvN, 5},
+    {"_RMarkov_C_dgerT", (DL_FUNC) &_RMarkov_C_dgerT, 4},
+    {"_RMarkov_C_dgerN", (DL_FUNC) &_RMarkov_C_dgerN, 4},
+    {"_RMarkov_C_dgemmNN", (DL_FUNC) &_RMarkov_C_dgemmNN, 5},
+    {"_RMarkov_C_dgemmTN", (DL_FUNC) &_RMarkov_C_dgemmTN, 5},
+    {"_RMarkov_C_dgemmNT", (DL_FUNC) &_RMarkov_C_dgemmNT, 5},
+    {"_RMarkov_C_dgemmTT", (DL_FUNC) &_RMarkov_C_dgemmTT, 5},
+    {"_RMarkov_C_dgemvN_coo", (DL_FUNC) &_RMarkov_C_dgemvN_coo, 5},
+    {"_RMarkov_C_dgemvT_coo", (DL_FUNC) &_RMarkov_C_dgemvT_coo, 5},
+    {"_RMarkov_C_dgerN_coo", (DL_FUNC) &_RMarkov_C_dgerN_coo, 4},
+    {"_RMarkov_C_dgerT_coo", (DL_FUNC) &_RMarkov_C_dgerT_coo, 4},
+    {"_RMarkov_C_dgemmNN_coo", (DL_FUNC) &_RMarkov_C_dgemmNN_coo, 5},
+    {"_RMarkov_C_dgemmTN_coo", (DL_FUNC) &_RMarkov_C_dgemmTN_coo, 5},
+    {"_RMarkov_C_dgemmNT_coo", (DL_FUNC) &_RMarkov_C_dgemmNT_coo, 5},
+    {"_RMarkov_C_dgemmTT_coo", (DL_FUNC) &_RMarkov_C_dgemmTT_coo, 5},
+    {"_RMarkov_C_dgemmNN2_coo", (DL_FUNC) &_RMarkov_C_dgemmNN2_coo, 5},
+    {"_RMarkov_C_dgemmTN2_coo", (DL_FUNC) &_RMarkov_C_dgemmTN2_coo, 5},
+    {"_RMarkov_C_dgemmNT2_coo", (DL_FUNC) &_RMarkov_C_dgemmNT2_coo, 5},
+    {"_RMarkov_C_dgemmTT2_coo", (DL_FUNC) &_RMarkov_C_dgemmTT2_coo, 5},
+    {"_RMarkov_C_dgemvN_csc", (DL_FUNC) &_RMarkov_C_dgemvN_csc, 5},
+    {"_RMarkov_C_dgemvT_csc", (DL_FUNC) &_RMarkov_C_dgemvT_csc, 5},
+    {"_RMarkov_C_dgerN_csc", (DL_FUNC) &_RMarkov_C_dgerN_csc, 4},
+    {"_RMarkov_C_dgerT_csc", (DL_FUNC) &_RMarkov_C_dgerT_csc, 4},
+    {"_RMarkov_C_dgemmNN_csc", (DL_FUNC) &_RMarkov_C_dgemmNN_csc, 5},
+    {"_RMarkov_C_dgemmTN_csc", (DL_FUNC) &_RMarkov_C_dgemmTN_csc, 5},
+    {"_RMarkov_C_dgemmNT_csc", (DL_FUNC) &_RMarkov_C_dgemmNT_csc, 5},
+    {"_RMarkov_C_dgemmTT_csc", (DL_FUNC) &_RMarkov_C_dgemmTT_csc, 5},
+    {"_RMarkov_C_dgemmNN2_csc", (DL_FUNC) &_RMarkov_C_dgemmNN2_csc, 5},
+    {"_RMarkov_C_dgemmTN2_csc", (DL_FUNC) &_RMarkov_C_dgemmTN2_csc, 5},
+    {"_RMarkov_C_dgemmNT2_csc", (DL_FUNC) &_RMarkov_C_dgemmNT2_csc, 5},
+    {"_RMarkov_C_dgemmTT2_csc", (DL_FUNC) &_RMarkov_C_dgemmTT2_csc, 5},
+    {"_RMarkov_C_dgemvN_csr", (DL_FUNC) &_RMarkov_C_dgemvN_csr, 5},
+    {"_RMarkov_C_dgemvT_csr", (DL_FUNC) &_RMarkov_C_dgemvT_csr, 5},
+    {"_RMarkov_C_dgerN_csr", (DL_FUNC) &_RMarkov_C_dgerN_csr, 4},
+    {"_RMarkov_C_dgerT_csr", (DL_FUNC) &_RMarkov_C_dgerT_csr, 4},
+    {"_RMarkov_C_dgemmNN_csr", (DL_FUNC) &_RMarkov_C_dgemmNN_csr, 5},
+    {"_RMarkov_C_dgemmTN_csr", (DL_FUNC) &_RMarkov_C_dgemmTN_csr, 5},
+    {"_RMarkov_C_dgemmNT_csr", (DL_FUNC) &_RMarkov_C_dgemmNT_csr, 5},
+    {"_RMarkov_C_dgemmTT_csr", (DL_FUNC) &_RMarkov_C_dgemmTT_csr, 5},
+    {"_RMarkov_C_dgemmNN2_csr", (DL_FUNC) &_RMarkov_C_dgemmNN2_csr, 5},
+    {"_RMarkov_C_dgemmTN2_csr", (DL_FUNC) &_RMarkov_C_dgemmTN2_csr, 5},
+    {"_RMarkov_C_dgemmNT2_csr", (DL_FUNC) &_RMarkov_C_dgemmNT2_csr, 5},
+    {"_RMarkov_C_dgemmTT2_csr", (DL_FUNC) &_RMarkov_C_dgemmTT2_csr, 5},
+    {"_RMarkov_C_unif_dense", (DL_FUNC) &_RMarkov_C_unif_dense, 2},
+    {"_RMarkov_C_unif_csr", (DL_FUNC) &_RMarkov_C_unif_csr, 2},
+    {"_RMarkov_C_unif_csc", (DL_FUNC) &_RMarkov_C_unif_csc, 2},
+    {"_RMarkov_C_unif_coo", (DL_FUNC) &_RMarkov_C_unif_coo, 2},
+    {"_RMarkov_C_mexp_vecT_dense", (DL_FUNC) &_RMarkov_C_mexp_vecT_dense, 5},
+    {"_RMarkov_C_mexp_vecN_dense", (DL_FUNC) &_RMarkov_C_mexp_vecN_dense, 5},
+    {"_RMarkov_C_mexp_vecT_csr", (DL_FUNC) &_RMarkov_C_mexp_vecT_csr, 5},
+    {"_RMarkov_C_mexp_vecN_csr", (DL_FUNC) &_RMarkov_C_mexp_vecN_csr, 5},
+    {"_RMarkov_C_mexp_vecT_csc", (DL_FUNC) &_RMarkov_C_mexp_vecT_csc, 5},
+    {"_RMarkov_C_mexp_vecN_csc", (DL_FUNC) &_RMarkov_C_mexp_vecN_csc, 5},
+    {"_RMarkov_C_mexp_vecT_coo", (DL_FUNC) &_RMarkov_C_mexp_vecT_coo, 5},
+    {"_RMarkov_C_mexp_vecN_coo", (DL_FUNC) &_RMarkov_C_mexp_vecN_coo, 5},
+    {"_RMarkov_C_mexp_matN_dense", (DL_FUNC) &_RMarkov_C_mexp_matN_dense, 5},
+    {"_RMarkov_C_mexp_matT_dense", (DL_FUNC) &_RMarkov_C_mexp_matT_dense, 5},
+    {"_RMarkov_C_mexp_matN_csr", (DL_FUNC) &_RMarkov_C_mexp_matN_csr, 5},
+    {"_RMarkov_C_mexp_matT_csr", (DL_FUNC) &_RMarkov_C_mexp_matT_csr, 5},
+    {"_RMarkov_C_mexp_matN_csc", (DL_FUNC) &_RMarkov_C_mexp_matN_csc, 5},
+    {"_RMarkov_C_mexp_matT_csc", (DL_FUNC) &_RMarkov_C_mexp_matT_csc, 5},
+    {"_RMarkov_C_mexp_matN_coo", (DL_FUNC) &_RMarkov_C_mexp_matN_coo, 5},
+    {"_RMarkov_C_mexp_matT_coo", (DL_FUNC) &_RMarkov_C_mexp_matT_coo, 5},
+    {"_RMarkov_C_mexpint_vecT_dense", (DL_FUNC) &_RMarkov_C_mexpint_vecT_dense, 6},
+    {"_RMarkov_C_mexpint_vecN_dense", (DL_FUNC) &_RMarkov_C_mexpint_vecN_dense, 6},
+    {"_RMarkov_C_mexpint_vecT_csr", (DL_FUNC) &_RMarkov_C_mexpint_vecT_csr, 6},
+    {"_RMarkov_C_mexpint_vecN_csr", (DL_FUNC) &_RMarkov_C_mexpint_vecN_csr, 6},
+    {"_RMarkov_C_mexpint_vecT_csc", (DL_FUNC) &_RMarkov_C_mexpint_vecT_csc, 6},
+    {"_RMarkov_C_mexpint_vecN_csc", (DL_FUNC) &_RMarkov_C_mexpint_vecN_csc, 6},
+    {"_RMarkov_C_mexpint_vecT_coo", (DL_FUNC) &_RMarkov_C_mexpint_vecT_coo, 6},
+    {"_RMarkov_C_mexpint_vecN_coo", (DL_FUNC) &_RMarkov_C_mexpint_vecN_coo, 6},
+    {"_RMarkov_C_mexpint_matT_dense", (DL_FUNC) &_RMarkov_C_mexpint_matT_dense, 6},
+    {"_RMarkov_C_mexpint_matN_dense", (DL_FUNC) &_RMarkov_C_mexpint_matN_dense, 6},
+    {"_RMarkov_C_mexpint_matT_csr", (DL_FUNC) &_RMarkov_C_mexpint_matT_csr, 6},
+    {"_RMarkov_C_mexpint_matN_csr", (DL_FUNC) &_RMarkov_C_mexpint_matN_csr, 6},
+    {"_RMarkov_C_mexpint_matT_csc", (DL_FUNC) &_RMarkov_C_mexpint_matT_csc, 6},
+    {"_RMarkov_C_mexpint_matN_csc", (DL_FUNC) &_RMarkov_C_mexpint_matN_csc, 6},
+    {"_RMarkov_C_mexpint_matT_coo", (DL_FUNC) &_RMarkov_C_mexpint_matT_coo, 6},
+    {"_RMarkov_C_mexpint_matN_coo", (DL_FUNC) &_RMarkov_C_mexpint_matN_coo, 6},
+    {"_RMarkov_C_gth_dense", (DL_FUNC) &_RMarkov_C_gth_dense, 1},
+    {"_RMarkov_C_gth_csr", (DL_FUNC) &_RMarkov_C_gth_csr, 1},
+    {"_RMarkov_C_gth_csc", (DL_FUNC) &_RMarkov_C_gth_csc, 1},
+    {"_RMarkov_C_gth_coo", (DL_FUNC) &_RMarkov_C_gth_coo, 1},
+    {"_RMarkov_C_sparse_nnz", (DL_FUNC) &_RMarkov_C_sparse_nnz, 1},
+    {"_RMarkov_C_nrow_dense", (DL_FUNC) &_RMarkov_C_nrow_dense, 1},
+    {"_RMarkov_C_nrow_csr", (DL_FUNC) &_RMarkov_C_nrow_csr, 1},
+    {"_RMarkov_C_nrow_csc", (DL_FUNC) &_RMarkov_C_nrow_csc, 1},
+    {"_RMarkov_C_nrow_coo", (DL_FUNC) &_RMarkov_C_nrow_coo, 1},
+    {"_RMarkov_C_create_csr", (DL_FUNC) &_RMarkov_C_create_csr, 4},
+    {"_RMarkov_C_sparse_to_dense_csr", (DL_FUNC) &_RMarkov_C_sparse_to_dense_csr, 2},
+    {"_RMarkov_C_create_csc", (DL_FUNC) &_RMarkov_C_create_csc, 4},
+    {"_RMarkov_C_sparse_to_dense_csc", (DL_FUNC) &_RMarkov_C_sparse_to_dense_csc, 2},
+    {"_RMarkov_C_create_coo", (DL_FUNC) &_RMarkov_C_create_coo, 4},
+    {"_RMarkov_C_sparse_to_dense_coo", (DL_FUNC) &_RMarkov_C_sparse_to_dense_coo, 2},
+    {"_RMarkov_C_diag_dense", (DL_FUNC) &_RMarkov_C_diag_dense, 1},
+    {"_RMarkov_C_diag_csr", (DL_FUNC) &_RMarkov_C_diag_csr, 1},
+    {"_RMarkov_C_diag_csc", (DL_FUNC) &_RMarkov_C_diag_csc, 1},
+    {"_RMarkov_C_diag_coo", (DL_FUNC) &_RMarkov_C_diag_coo, 1},
+    {"_RMarkov_C_diag_set_dense", (DL_FUNC) &_RMarkov_C_diag_set_dense, 2},
+    {"_RMarkov_C_diag_set_csr", (DL_FUNC) &_RMarkov_C_diag_set_csr, 2},
+    {"_RMarkov_C_diag_set_csc", (DL_FUNC) &_RMarkov_C_diag_set_csc, 2},
+    {"_RMarkov_C_diag_set_coo", (DL_FUNC) &_RMarkov_C_diag_set_coo, 2},
+    {"_RMarkov_C_poi_rightbound", (DL_FUNC) &_RMarkov_C_poi_rightbound, 2},
+    {"_RMarkov_C_poi_pmf", (DL_FUNC) &_RMarkov_C_poi_pmf, 3},
+    {"_RMarkov_C_poi_cpmf", (DL_FUNC) &_RMarkov_C_poi_cpmf, 3},
+    {"_RMarkov_C_gsstep_vecN_dense", (DL_FUNC) &_RMarkov_C_gsstep_vecN_dense, 6},
+    {"_RMarkov_C_gsstep_vecT_dense", (DL_FUNC) &_RMarkov_C_gsstep_vecT_dense, 6},
+    {"_RMarkov_C_gsstep_vecN_csr", (DL_FUNC) &_RMarkov_C_gsstep_vecN_csr, 6},
+    {"_RMarkov_C_gsstep_vecT_csc", (DL_FUNC) &_RMarkov_C_gsstep_vecT_csc, 6},
+    {"_RMarkov_C_gsstep_matN_dense", (DL_FUNC) &_RMarkov_C_gsstep_matN_dense, 6},
+    {"_RMarkov_C_gsstep_matT_dense", (DL_FUNC) &_RMarkov_C_gsstep_matT_dense, 6},
+    {"_RMarkov_C_gsstep_matN_csr", (DL_FUNC) &_RMarkov_C_gsstep_matN_csr, 6},
+    {"_RMarkov_C_gsstep_matT_csc", (DL_FUNC) &_RMarkov_C_gsstep_matT_csc, 6},
     {NULL, NULL, 0}
 };
 

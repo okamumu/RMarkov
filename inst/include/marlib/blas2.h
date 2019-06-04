@@ -1,8 +1,5 @@
 #pragma once
 
-#include "traits.h"
-#include "f77blasw.h"
-
 namespace marlib {
 
 template<typename T1, typename T2, typename T3>
@@ -15,7 +12,7 @@ void dgemv(TRANS, double alpha, const T1& A, const T2& x, double beta, T3& y, De
   const int ld = traits1::ld(A);
   const int inc1 = traits2::inc(x);
   const int inc2 = traits3::inc(y);
-  blas::dgemv('T', m, n, alpha, traits1::value(A), ld,
+  f77dgemv('T', m, n, alpha, traits1::value(A), ld,
               traits2::value(x), inc1, beta, traits3::value(y), inc2);
 }
 
@@ -29,7 +26,7 @@ void dgemv(NOTRANS, double alpha, const T1& A, const T2& x, double beta, T3& y, 
   const int ld = traits1::ld(A);
   const int inc1 = traits2::inc(x);
   const int inc2 = traits3::inc(y);
-  blas::dgemv('N', m, n, alpha, traits1::value(A), ld,
+  f77dgemv('N', m, n, alpha, traits1::value(A), ld,
               traits2::value(x), inc1, beta, traits3::value(y), inc2);
 }
 
@@ -43,7 +40,7 @@ void dger(NOTRANS, double alpha, const T1& x, const T2& y, T3& A, DenseMatrixT) 
   const int m = traits3::nrow(A);
   const int n = traits3::ncol(A);
   const int ld = traits3::ld(A);
-  blas::dger(m, n, alpha, traits1::value(x), inc1, traits2::value(y), inc2,
+  f77dger(m, n, alpha, traits1::value(x), inc1, traits2::value(y), inc2,
              traits3::value(A), ld);
 }
 
@@ -57,7 +54,7 @@ void dger(TRANS, double alpha, const T1& x, const T2& y, T3& A, DenseMatrixT) {
   const int m = traits3::nrow(A);
   const int n = traits3::ncol(A);
   const int ld = traits3::ld(A);
-  blas::dger(m, n, alpha, traits2::value(y), inc2, traits1::value(x), inc1,
+  f77dger(m, n, alpha, traits2::value(y), inc2, traits1::value(x), inc1,
              traits3::value(A), ld);
 }
 

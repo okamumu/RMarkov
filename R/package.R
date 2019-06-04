@@ -6,4 +6,5 @@
 #' @docType package
 #' @name RMarkov
 #' @useDynLib RMarkov
+#' @import deformula
 NULL
