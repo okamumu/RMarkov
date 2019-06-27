@@ -20,8 +20,9 @@ test_that("mexp vecT forward dense", {
     c(5,2,1,-8)
   )
   x0 <- c(1,0,0,0)
+  cx0 <- c(0,0,0,0)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_vec(TRUE, Matrix(Q), x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_vec(TRUE, Matrix(Q), x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,length(t)))
   res$cx <- array(res$cx, dim=c(4,length(t)))
 
@@ -41,8 +42,9 @@ test_that("mexp vecT backward dense", {
     c(5,2,1,-8)
   )
   x0 <- c(1,0,0,0)
+  cx0 <- c(0,0,0,0)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_vec(FALSE, Matrix(Q), x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_vec(FALSE, Matrix(Q), x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,length(t)))
   res$cx <- array(res$cx, dim=c(4,length(t)))
 
@@ -64,8 +66,9 @@ test_that("mexp vecT forward csr", {
   )
   spQ <- as(Q, "RsparseMatrix")
   x0 <- c(1,0,0,0)
+  cx0 <- c(0,0,0,0)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_vec(TRUE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_vec(TRUE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,length(t)))
   res$cx <- array(res$cx, dim=c(4,length(t)))
 
@@ -86,8 +89,9 @@ test_that("mexp vecT backward csr", {
   )
   spQ <- as(Q, "RsparseMatrix")
   x0 <- c(1,0,0,0)
+  cx0 <- c(0,0,0,0)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_vec(FALSE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_vec(FALSE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,length(t)))
   res$cx <- array(res$cx, dim=c(4,length(t)))
 
@@ -108,8 +112,9 @@ test_that("mexp vecT forward csc", {
   )
   spQ <- as(Q, "CsparseMatrix")
   x0 <- c(1,0,0,0)
+  cx0 <- c(0,0,0,0)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_vec(TRUE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_vec(TRUE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,length(t)))
   res$cx <- array(res$cx, dim=c(4,length(t)))
 
@@ -130,8 +135,9 @@ test_that("mexp vecT backward csc", {
   )
   spQ <- as(Q, "CsparseMatrix")
   x0 <- c(1,0,0,0)
+  cx0 <- c(0,0,0,0)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_vec(FALSE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_vec(FALSE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,length(t)))
   res$cx <- array(res$cx, dim=c(4,length(t)))
 
@@ -152,8 +158,9 @@ test_that("mexp vecT forward coo", {
   )
   spQ <- as(Q, "TsparseMatrix")
   x0 <- c(1,0,0,0)
+  cx0 <- c(0,0,0,0)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_vec(TRUE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_vec(TRUE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,length(t)))
   res$cx <- array(res$cx, dim=c(4,length(t)))
 
@@ -174,8 +181,9 @@ test_that("mexp vecT backward coo", {
   )
   spQ <- as(Q, "TsparseMatrix")
   x0 <- c(1,0,0,0)
+  cx0 <- c(0,0,0,0)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_vec(FALSE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_vec(FALSE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,length(t)))
   res$cx <- array(res$cx, dim=c(4,length(t)))
 
@@ -202,8 +210,9 @@ test_that("mexp matT forward dense", {
     c(1,0,1,0),
     c(0,0,0,2)
   )
+  cx0 <- matrix(0, 4, 4)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_mat(TRUE, Matrix(Q), x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_mat(TRUE, Matrix(Q), x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,4,length(t)))
   res$cx <- array(res$cx, dim=c(4,4,length(t)))
 
@@ -230,8 +239,9 @@ test_that("mexp matT backward dense", {
     c(1,0,1,0),
     c(0,0,0,2)
   )
+  cx0 <- matrix(0, 4, 4)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_mat(FALSE, Matrix(Q), x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_mat(FALSE, Matrix(Q), x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,4,length(t)))
   res$cx <- array(res$cx, dim=c(4,4,length(t)))
 
@@ -259,8 +269,9 @@ test_that("mexp matT forward csr", {
     c(1,0,1,0),
     c(0,0,0,2)
   )
+  cx0 <- matrix(0, 4, 4)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_mat(TRUE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_mat(TRUE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,4,length(t)))
   res$cx <- array(res$cx, dim=c(4,4,length(t)))
 
@@ -288,8 +299,9 @@ test_that("mexp matT backward csr", {
     c(1,0,1,0),
     c(0,0,0,2)
   )
+  cx0 <- matrix(0, 4, 4)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_mat(FALSE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_mat(FALSE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,4,length(t)))
   res$cx <- array(res$cx, dim=c(4,4,length(t)))
 
@@ -317,8 +329,9 @@ test_that("mexp matT forward csc", {
     c(1,0,1,0),
     c(0,0,0,2)
   )
+  cx0 <- matrix(0, 4, 4)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_mat(TRUE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_mat(TRUE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,4,length(t)))
   res$cx <- array(res$cx, dim=c(4,4,length(t)))
 
@@ -346,8 +359,9 @@ test_that("mexp matT backward csc", {
     c(1,0,1,0),
     c(0,0,0,2)
   )
+  cx0 <- matrix(0, 4, 4)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_mat(FALSE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_mat(FALSE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,4,length(t)))
   res$cx <- array(res$cx, dim=c(4,4,length(t)))
 
@@ -375,8 +389,9 @@ test_that("mexp matT forward coo", {
     c(1,0,1,0),
     c(0,0,0,2)
   )
+  cx0 <- matrix(0, 4, 4)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_mat(TRUE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_mat(TRUE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,4,length(t)))
   res$cx <- array(res$cx, dim=c(4,4,length(t)))
 
@@ -404,8 +419,9 @@ test_that("mexp matT backward coo", {
     c(1,0,1,0),
     c(0,0,0,2)
   )
+  cx0 <- matrix(0, 4, 4)
   t <- c(0.3,0.4,0.6,0.1,0.2)
-  res <- Ctran_unif_mat(FALSE, spQ, x0, t, 1.01, 1.0e-8, 100)
+  res <- Ctran_unif_mat(FALSE, spQ, x0, cx0, t, 1.01, 1.0e-8, 100)
   res$x <- array(res$x, dim=c(4,4,length(t)))
   res$cx <- array(res$cx, dim=c(4,4,length(t)))
 

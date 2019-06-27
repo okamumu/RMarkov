@@ -57,5 +57,5 @@ A <- rbind(
  c(-2,2,0),
  c(3,-5,2),
  c(0,1,-1))
-cmexpAv.mix(A=A, f=dgamma, shape=2, scale=1)
+cmexpAx.mix(A=A, f=dgamma, shape=2, scale=1)
 }

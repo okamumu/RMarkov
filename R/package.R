@@ -6,5 +6,8 @@
 #' @docType package
 #' @name RMarkov
 #' @useDynLib RMarkov
+#' @import Rcpp
+#' @import Matrix
 #' @import deformula
+#' @importFrom methods as
 NULL

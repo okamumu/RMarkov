@@ -1,8 +1,4 @@
-#include <Rcpp.h>
-using namespace Rcpp;
-
-#include <marlib.h>
-
+#include "marlib_Rcpp.h"
 using namespace Rcpp;
 
 template <typename T1, typename MatT>
@@ -15,8 +11,7 @@ NumericVector Cmarkovst_gth(T1 Q, MatT) {
   NumericMatrix A(n,n);
   NumericVector x(n);
 
-  dcopy(Q, A, MatT(), marlib::DenseMatrixT());
-  marlib::gth_impl(A, x);
+  marlib::ctmc_st_gth(Q, A, x, MatT());
   return x;
 }
 
@@ -33,38 +28,14 @@ List Cmarkovst_power(const T1& Q, NumericVector x0, double ufact, int steps, dou
   T1 P = clone(Q);
   NumericVector x = clone(x0);
   NumericVector tmpv(n);
-  NumericVector prevx(n);
-  marlib::unif(P, ufact, tmpv, MatT());
-  int iter = 0;
-  int info = 1;
-  double rerror;
-
-  while(1) {
-    marlib::dcopy(x, prevx);
-    for (int i=0; i<steps; i++) {
-      marlib::dcopy(x, tmpv);
-      marlib::dgemv(marlib::TRANS(), 1.0, P, tmpv, 0.0, x, MatT());
-      double tmp = marlib::dasum(x);
-      marlib::dscal(1.0/tmp, x);
-    }
-    marlib::daxpy(-1.0, x, prevx);
-    iter += steps;
-    rerror = Rcpp::max(Rcpp::abs(prevx/x));
-    if (rerror < rtol) {
-      info = 0;
-      break;
-    }
-    if (iter >= maxiter) {
-      info = -1;
-      break;
-    }
-    R_CheckUserInterrupt();
-  }
+  unif(P, ufact, tmpv, MatT());
+  marlib::ctmc_st_params params(rtol, steps, maxiter);
+  marlib::ctmc_st_power(P, x, params, [](marlib::ctmc_st_params){R_CheckUserInterrupt();}, MatT());
   return List::create(
     Named("x")=x,
-    Named("convergence")=(info==0),
-    Named("iter")=iter,
-    Named("rerror")=rerror
+    Named("convergence")=(params.info==0),
+    Named("iter")=params.iter,
+    Named("rerror")=params.rerror
   );
 }
 
@@ -78,38 +49,14 @@ List Cmarkovst_gs(const T1& Q, NumericVector x0, int steps, double rtol, int max
   if (n != x0.size()) {
     stop("Vector x0 should be the same dimension of Q.");
   }
-  NumericVector b(n);
   NumericVector x = clone(x0);
-  NumericVector prevx(n);
-  int iter = 0;
-  int info = 1;
-  double rerror;
-
-  while(1) {
-    marlib::dcopy(x, prevx);
-    for (int i=0; i<steps; i++) {
-      marlib::gsstep(marlib::TRANS(), 1.0, Q, 0.0, 1.0, b, x, MatT(), marlib::ArrayT());
-      double tmp = marlib::dasum(x);
-      marlib::dscal(1.0/tmp, x);
-    }
-    marlib::daxpy(-1.0, x, prevx);
-    iter += steps;
-    rerror = Rcpp::max(Rcpp::abs(prevx/x));
-    if (rerror < rtol) {
-      info = 0;
-      break;
-    }
-    if (iter >= maxiter) {
-      info = -1;
-      break;
-    }
-    R_CheckUserInterrupt();
-  }
+  marlib::ctmc_st_params params(rtol, steps, maxiter);
+  marlib::ctmc_st_gs(Q, x, params, [](marlib::ctmc_st_params){R_CheckUserInterrupt();}, MatT());
   return List::create(
     Named("x")=x,
-    Named("convergence")=(info==0),
-    Named("iter")=iter,
-    Named("rerror")=rerror
+    Named("convergence")=(params.info==0),
+    Named("iter")=params.iter,
+    Named("rerror")=params.rerror
   );
 }
 

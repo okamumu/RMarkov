@@ -1,6 +1,5 @@
-#pragma once
-
-#include "traits.h"
+#ifndef MARLIB_UTILS_H
+#define MARLIB_UTILS_H
 
 namespace marlib {
 
@@ -275,6 +274,83 @@ void diag_set(T1& A, const T2& x, COOMatrixT) {
   }
 }
 
+/// parameters
+
+struct ctmc_st_params {
+  int steps;
+  double rtol;
+  int maxiter;
+  int iter;
+  int info;
+  double rerror;
+
+  ctmc_st_params(double rtol, int steps, int maxiter)
+    : steps(steps), rtol(rtol), maxiter(maxiter), iter(0), info(0), rerror(0.0) {}
+};
+
+struct mexp_params {
+  double ufact;
+  double eps;
+  int rmax;
+  int r;
+
+  mexp_params(double ufact, double eps, int rmax)
+    : ufact(ufact), eps(eps), rmax(rmax), r(0) {}
+};
+
+///// vector functions
+
+template<typename T>
+double dsum(const T& x) {
+  using traits1 = vector_traits<T>;
+  const int n = traits1::size(x);
+  const int incx = traits1::inc(x);
+  const double* valueX = traits1::value(x);
+
+  double tmp = 0.0;
+  for (int i=0; i<n; i++, valueX+=incx) {
+    tmp += *valueX;
+  }
+  return tmp;
 }
 
+template<typename T>
+double dmax(const T& x) {
+  using traits1 = vector_traits<T>;
+  const int n = traits1::size(x);
+  const int incx = traits1::inc(x);
+  const double* valueX = traits1::value(x);
+
+  double tmp = *valueX;
+  for (int i=0; i<n; i++, valueX+=incx) {
+    if (*valueX > tmp) {
+      tmp = *valueX;
+    }
+  }
+  return tmp;
+}
+
+template <typename T1, typename T2>
+double drerr(const T1& prevx, const T2& x) {
+  using traits1 = vector_traits<T1>;
+  using traits2 = vector_traits<T2>;
+  const int n = traits1::size(prevx);
+  const double* valuePrevX = traits1::value(prevx);
+  const int incprevx = traits1::inc(prevx);
+  const double* valueX = traits2::value(x);
+  const int incx = traits2::inc(x);
+  double max = 0.0;
+  for (int i=0; i<n; i++, valuePrevX+=incprevx, valueX+=incx) {
+    double tmp = std::abs((*valuePrevX - *valueX) / *valueX);
+    if (max < tmp) {
+      max = tmp;
+    }
+  }
+  return max;
+}
+
+
+}
+
+#endif
 

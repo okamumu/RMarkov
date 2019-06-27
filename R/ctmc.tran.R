@@ -17,7 +17,7 @@
 #' @param Q A n-by-n matrix. A CTMC kernel. matrix, dgeMatrix, dgRMatrix, dgCMatrix and dgTMatrix are allowed.
 #' @param x An initial probability vector or a matrix for initial probability vectors.
 #' @param t A nemeric vector, indicating the time sequence, which should be a non-increasing.
-#' @param r A numeric vector or matrix indicating the reward.
+#' @param cx An initial probability vector or a matrix for initial cumulative vectors.
 #' @param transpose A logical, indicating the matrix Q is transposed or not. The default is TRUE.
 #' @param ufact A numeric value for the uniformization. The default is 1.01.
 #' @param rmax An integer, indicating the maximum number of rightbound of Poisson distribution in uniformization (see details).
@@ -38,7 +38,7 @@
 #'
 #' @export
 
-ctmc.tran.unif <- function(Q, x, t, transpose = TRUE,
+ctmc.tran.unif <- function(Q, x, t, cx, transpose = TRUE,
                            eps = sqrt(.Machine$double.eps), ufact = 1.01,
                            rmax = 1000, matrix.class = NULL) {
   if (!is.null(matrix.class)) {
@@ -55,10 +55,16 @@ ctmc.tran.unif <- function(Q, x, t, transpose = TRUE,
     stop("Time (argument t) should be a non-decreasing sequence.")
 
   if (is.matrix(x)) {
-    res <- Ctran_unif_mat(transpose, Q, x, dt, ufact, eps, rmax)
+    if (missing(cx)) {
+      cx <- matrix(0.0, nrow(x), ncol(x))
+    }
+    res <- Ctran_unif_mat(transpose, Q, x, cx, dt, ufact, eps, rmax)
     list(t=t, x=array(res$x, dim=c(nrow(x), ncol(x), length(t))), cx=array(res$cx, dim=c(nrow(x), ncol(x), length(t))))
   } else {
-    res <- Ctran_unif_vec(transpose, Q, x, dt, ufact, eps, rmax)
+    if (missing(cx)) {
+      cx <- numeric(length(x))
+    }
+    res <- Ctran_unif_vec(transpose, Q, x, cx, dt, ufact, eps, rmax)
     list(t=t, x=array(res$x, dim=c(length(x), length(t))), cx=array(res$cx, dim=c(length(x), length(t))))
   }
 }
@@ -94,6 +100,7 @@ ctmc.tran.unif <- function(Q, x, t, transpose = TRUE,
 #' @param x An initial probability vector or a matrix for initial probability vectors.
 #' @param t A nemeric vector, indicating the time sequence, which should be a non-increasing.
 #' @param r A numeric vector or matrix indicating the reward.
+#' @param cx An initial cumulative vector or a matrix.
 #' @param transpose A logical, indicating the matrix Q is transposed or not. The default is TRUE.
 #' @param ufact A numeric value for the uniformization. The default is 1.01.
 #' @param rmax An integer, indicating the maximum number of rightbound of Poisson distribution in uniformization (see details).
@@ -116,7 +123,7 @@ ctmc.tran.unif <- function(Q, x, t, transpose = TRUE,
 #'
 #' @export
 
-ctmc.tran.rwd.unif <- function(Q, x, r, t, transpose = TRUE,
+ctmc.tran.rwd.unif <- function(Q, x, r, t, cx, transpose = TRUE,
                                eps = sqrt(.Machine$double.eps), ufact = 1.01,
                                rmax = 1000, matrix.class = NULL) {
   if (!is.null(matrix.class)) {
@@ -133,23 +140,35 @@ ctmc.tran.rwd.unif <- function(Q, x, r, t, transpose = TRUE,
     stop("Time (argument t) should be a non-decreasing sequence.")
 
   if (is.matrix(x) && is.matrix(r)) {
-    res <- Ctran_unif_rwd_mat_mat(transpose, Q, x, r, dt, ufact, eps, rmax)
+    if (missing(cx)) {
+      cx <- matrix(0, nrow(x), ncol(x))
+    }
+    res <- Ctran_unif_rwd_mat_mat(transpose, Q, x, cx, r, dt, ufact, eps, rmax)
     list(t=t, x=res$x, cx=res$cx,
          irwd=array(res$irwd, dim=c(ncol(r), ncol(x), length(t))),
          crwd=array(res$crwd, dim=c(ncol(r), ncol(x), length(t))))
   } else if (is.vector(x) && is.matrix(r)) {
-    res <- Ctran_unif_rwd_vec_mat(transpose, Q, x, r, dt, ufact, eps, rmax)
+    if (missing(cx)) {
+      cx <- numeric(length(x))
+    }
+    res <- Ctran_unif_rwd_vec_mat(transpose, Q, x, cx, r, dt, ufact, eps, rmax)
     list(t=t, x=res$x, cx=res$cx,
          irwd=array(res$irwd, dim=c(ncol(r), length(t))),
          crwd=array(res$crwd, dim=c(ncol(r), length(t))))
   } else if (is.vector(x) && is.vector(r)) {
-    res <- Ctran_unif_rwd_vec_vec(transpose, Q, x, r, dt, ufact, eps, rmax)
+    if (missing(cx)) {
+      cx <- numeric(length(x))
+    }
+    res <- Ctran_unif_rwd_vec_vec(transpose, Q, x, cx, r, dt, ufact, eps, rmax)
     list(t=t, x=res$x, cx=res$cx,
          irwd=res$irwd,
          crwd=res$crwd)
   } else if (is.matrix(x) && is.vector(r)) {
+    if (missing(cx)) {
+      cx <- matrix(0, nrow(x), ncol(x))
+    }
     r <- matrix(r, ncol=1)
-    res <- Ctran_unif_rwd_mat_mat(transpose, Q, x, r, dt, ufact, eps, rmax)
+    res <- Ctran_unif_rwd_mat_mat(transpose, Q, x, cx, r, dt, ufact, eps, rmax)
     list(t=t, x=res$x, cx=res$cx,
          irwd=array(res$irwd, dim=c(ncol(r), ncol(x), length(t))),
          crwd=array(res$crwd, dim=c(ncol(r), ncol(x), length(t))))

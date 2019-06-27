@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BLAS1_H
+#define BLAS1_H
 
 namespace marlib {
 
@@ -18,14 +19,6 @@ namespace marlib {
     const int n = traits1::size(x);
     const int inc1 = traits1::inc(x);
     return f77dasum(n, traits1::value(x), inc1);
-  }
-
-  template<typename T>
-  double dsum(const T& x) {
-    using traits1 = vector_traits<T>;
-    const int n = traits1::size(x);
-    const int inc1 = traits1::inc(x);
-    return f77dsum(n, traits1::value(x), inc1);
   }
 
   template<typename T>
@@ -85,6 +78,6 @@ namespace marlib {
       *p = v;
     }
   }
-
-
 }
+
+#endif

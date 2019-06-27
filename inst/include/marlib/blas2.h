@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BLAS2_H
+#define BLAS2_H
 
 namespace marlib {
 
@@ -60,3 +61,4 @@ void dger(TRANS, double alpha, const T1& x, const T2& y, T3& A, DenseMatrixT) {
 
 }
 
+#endif

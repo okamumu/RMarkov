@@ -4,7 +4,7 @@
 \alias{cmexpAx}
 \title{Integral of matrix exponential with uniformization}
 \usage{
-cmexpAx(A, x, t = 1, transpose = FALSE,
+cmexpAx(A, x, t = 1, cx, transpose = FALSE,
   eps = sqrt(.Machine$double.eps), ufact = 1.01, rmax = 1000,
   matrix.class = NULL)
 }
@@ -14,6 +14,8 @@ cmexpAx(A, x, t = 1, transpose = FALSE,
 \item{x}{A vector or matrix.}
 
 \item{t}{A value.}
+
+\item{cx}{A vector or matrix.}
 
 \item{transpose}{A logical. If TRUE, the matrix A is transposed. The default is FALSE.}
 
@@ -29,5 +31,5 @@ the matrix class of \code{A} is directly used.}
 }
 \description{
 This is the function to compute the following matrix exponential with uniformization:
-\deqn{y = \exp(Au) x} and \deqn{cy = \int_0^t \exp(Au) du x}
+\deqn{y = \exp(Au) x} and \deqn{cy = cx + \int_0^t \exp(Au) du x}
 }

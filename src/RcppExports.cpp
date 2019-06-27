@@ -5,111 +5,6 @@
 
 using namespace Rcpp;
 
-// Cmarkovstsen_gs
-List Cmarkovstsen_gs(S4 Q, NumericVector x0, NumericVector y, NumericVector pis, int steps, double rtol, int maxiter);
-RcppExport SEXP _RMarkov_Cmarkovstsen_gs(SEXP QSEXP, SEXP x0SEXP, SEXP ySEXP, SEXP pisSEXP, SEXP stepsSEXP, SEXP rtolSEXP, SEXP maxiterSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type pis(pisSEXP);
-    Rcpp::traits::input_parameter< int >::type steps(stepsSEXP);
-    Rcpp::traits::input_parameter< double >::type rtol(rtolSEXP);
-    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
-    rcpp_result_gen = Rcpp::wrap(Cmarkovstsen_gs(Q, x0, y, pis, steps, rtol, maxiter));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Ctran_unif_vec
-List Ctran_unif_vec(bool trans, S4 A, NumericVector x0, NumericVector t, double ufact, double eps, int rmax);
-RcppExport SEXP _RMarkov_Ctran_unif_vec(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
-    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
-    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
-    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
-    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
-    rcpp_result_gen = Rcpp::wrap(Ctran_unif_vec(trans, A, x0, t, ufact, eps, rmax));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Ctran_unif_mat
-List Ctran_unif_mat(bool trans, S4 A, NumericMatrix x0, NumericVector t, double ufact, double eps, int rmax);
-RcppExport SEXP _RMarkov_Ctran_unif_mat(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
-    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
-    Rcpp::traits::input_parameter< NumericMatrix >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
-    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
-    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
-    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
-    rcpp_result_gen = Rcpp::wrap(Ctran_unif_mat(trans, A, x0, t, ufact, eps, rmax));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Ctran_unif_rwd_vec_vec
-List Ctran_unif_rwd_vec_vec(bool trans, S4 A, NumericVector x0, NumericVector rwd, NumericVector t, double ufact, double eps, int rmax);
-RcppExport SEXP _RMarkov_Ctran_unif_rwd_vec_vec(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP rwdSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
-    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type rwd(rwdSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
-    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
-    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
-    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
-    rcpp_result_gen = Rcpp::wrap(Ctran_unif_rwd_vec_vec(trans, A, x0, rwd, t, ufact, eps, rmax));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Ctran_unif_rwd_vec_mat
-List Ctran_unif_rwd_vec_mat(bool trans, S4 A, NumericVector x0, NumericMatrix rwd, NumericVector t, double ufact, double eps, int rmax);
-RcppExport SEXP _RMarkov_Ctran_unif_rwd_vec_mat(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP rwdSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
-    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< NumericMatrix >::type rwd(rwdSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
-    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
-    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
-    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
-    rcpp_result_gen = Rcpp::wrap(Ctran_unif_rwd_vec_mat(trans, A, x0, rwd, t, ufact, eps, rmax));
-    return rcpp_result_gen;
-END_RCPP
-}
-// Ctran_unif_rwd_mat_mat
-List Ctran_unif_rwd_mat_mat(bool trans, S4 A, NumericMatrix x0, NumericMatrix rwd, NumericVector t, double ufact, double eps, int rmax);
-RcppExport SEXP _RMarkov_Ctran_unif_rwd_mat_mat(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP rwdSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
-    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
-    Rcpp::traits::input_parameter< NumericMatrix >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< NumericMatrix >::type rwd(rwdSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
-    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
-    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
-    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
-    rcpp_result_gen = Rcpp::wrap(Ctran_unif_rwd_mat_mat(trans, A, x0, rwd, t, ufact, eps, rmax));
-    return rcpp_result_gen;
-END_RCPP
-}
 // Cmarkovst_gth
 NumericVector Cmarkovst_gth(S4 Q);
 RcppExport SEXP _RMarkov_Cmarkovst_gth(SEXP QSEXP) {
@@ -149,6 +44,116 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type rtol(rtolSEXP);
     Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
     rcpp_result_gen = Rcpp::wrap(Cmarkovst_gs(Q, x0, steps, rtol, maxiter));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Cmarkovstsen_gs
+List Cmarkovstsen_gs(S4 Q, NumericVector x0, NumericVector y, NumericVector pis, int steps, double rtol, int maxiter);
+RcppExport SEXP _RMarkov_Cmarkovstsen_gs(SEXP QSEXP, SEXP x0SEXP, SEXP ySEXP, SEXP pisSEXP, SEXP stepsSEXP, SEXP rtolSEXP, SEXP maxiterSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type pis(pisSEXP);
+    Rcpp::traits::input_parameter< int >::type steps(stepsSEXP);
+    Rcpp::traits::input_parameter< double >::type rtol(rtolSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmarkovstsen_gs(Q, x0, y, pis, steps, rtol, maxiter));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Ctran_unif_vec
+List Ctran_unif_vec(bool trans, S4 A, NumericVector x0, NumericVector cx0, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Ctran_unif_vec(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP cx0SEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cx0(cx0SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Ctran_unif_vec(trans, A, x0, cx0, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Ctran_unif_mat
+List Ctran_unif_mat(bool trans, S4 A, NumericMatrix x0, NumericMatrix cx0, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Ctran_unif_mat(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP cx0SEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type cx0(cx0SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Ctran_unif_mat(trans, A, x0, cx0, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Ctran_unif_rwd_vec_vec
+List Ctran_unif_rwd_vec_vec(bool trans, S4 A, NumericVector x0, NumericVector cx0, NumericVector rwd, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Ctran_unif_rwd_vec_vec(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP cx0SEXP, SEXP rwdSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cx0(cx0SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type rwd(rwdSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Ctran_unif_rwd_vec_vec(trans, A, x0, cx0, rwd, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Ctran_unif_rwd_vec_mat
+List Ctran_unif_rwd_vec_mat(bool trans, S4 A, NumericVector x0, NumericVector cx0, NumericMatrix rwd, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Ctran_unif_rwd_vec_mat(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP cx0SEXP, SEXP rwdSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cx0(cx0SEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type rwd(rwdSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Ctran_unif_rwd_vec_mat(trans, A, x0, cx0, rwd, t, ufact, eps, rmax));
+    return rcpp_result_gen;
+END_RCPP
+}
+// Ctran_unif_rwd_mat_mat
+List Ctran_unif_rwd_mat_mat(bool trans, S4 A, NumericMatrix x0, NumericMatrix cx0, NumericMatrix rwd, NumericVector t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Ctran_unif_rwd_mat_mat(SEXP transSEXP, SEXP ASEXP, SEXP x0SEXP, SEXP cx0SEXP, SEXP rwdSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
+    Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type cx0(cx0SEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type rwd(rwdSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type t(tSEXP);
+    Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
+    Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
+    Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
+    rcpp_result_gen = Rcpp::wrap(Ctran_unif_rwd_mat_mat(trans, A, x0, cx0, rwd, t, ufact, eps, rmax));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -259,36 +264,38 @@ BEGIN_RCPP
 END_RCPP
 }
 // Cmexpint_unif_vec
-List Cmexpint_unif_vec(bool trans, S4 A, NumericVector x, double t, double ufact, double eps, int rmax);
-RcppExport SEXP _RMarkov_Cmexpint_unif_vec(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+List Cmexpint_unif_vec(bool trans, S4 A, NumericVector x, NumericVector cx, double t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Cmexpint_unif_vec(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP cxSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
     Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type cx(cxSEXP);
     Rcpp::traits::input_parameter< double >::type t(tSEXP);
     Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
     Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
     Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
-    rcpp_result_gen = Rcpp::wrap(Cmexpint_unif_vec(trans, A, x, t, ufact, eps, rmax));
+    rcpp_result_gen = Rcpp::wrap(Cmexpint_unif_vec(trans, A, x, cx, t, ufact, eps, rmax));
     return rcpp_result_gen;
 END_RCPP
 }
 // Cmexpint_unif_mat
-List Cmexpint_unif_mat(bool trans, S4 A, NumericMatrix x, double t, double ufact, double eps, int rmax);
-RcppExport SEXP _RMarkov_Cmexpint_unif_mat(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
+List Cmexpint_unif_mat(bool trans, S4 A, NumericMatrix x, NumericMatrix cx, double t, double ufact, double eps, int rmax);
+RcppExport SEXP _RMarkov_Cmexpint_unif_mat(SEXP transSEXP, SEXP ASEXP, SEXP xSEXP, SEXP cxSEXP, SEXP tSEXP, SEXP ufactSEXP, SEXP epsSEXP, SEXP rmaxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< bool >::type trans(transSEXP);
     Rcpp::traits::input_parameter< S4 >::type A(ASEXP);
     Rcpp::traits::input_parameter< NumericMatrix >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type cx(cxSEXP);
     Rcpp::traits::input_parameter< double >::type t(tSEXP);
     Rcpp::traits::input_parameter< double >::type ufact(ufactSEXP);
     Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
     Rcpp::traits::input_parameter< int >::type rmax(rmaxSEXP);
-    rcpp_result_gen = Rcpp::wrap(Cmexpint_unif_mat(trans, A, x, t, ufact, eps, rmax));
+    rcpp_result_gen = Rcpp::wrap(Cmexpint_unif_mat(trans, A, x, cx, t, ufact, eps, rmax));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -2022,23 +2029,23 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_RMarkov_Cmarkovstsen_gs", (DL_FUNC) &_RMarkov_Cmarkovstsen_gs, 7},
-    {"_RMarkov_Ctran_unif_vec", (DL_FUNC) &_RMarkov_Ctran_unif_vec, 7},
-    {"_RMarkov_Ctran_unif_mat", (DL_FUNC) &_RMarkov_Ctran_unif_mat, 7},
-    {"_RMarkov_Ctran_unif_rwd_vec_vec", (DL_FUNC) &_RMarkov_Ctran_unif_rwd_vec_vec, 8},
-    {"_RMarkov_Ctran_unif_rwd_vec_mat", (DL_FUNC) &_RMarkov_Ctran_unif_rwd_vec_mat, 8},
-    {"_RMarkov_Ctran_unif_rwd_mat_mat", (DL_FUNC) &_RMarkov_Ctran_unif_rwd_mat_mat, 8},
     {"_RMarkov_Cmarkovst_gth", (DL_FUNC) &_RMarkov_Cmarkovst_gth, 1},
     {"_RMarkov_Cmarkovst_power", (DL_FUNC) &_RMarkov_Cmarkovst_power, 6},
     {"_RMarkov_Cmarkovst_gs", (DL_FUNC) &_RMarkov_Cmarkovst_gs, 5},
+    {"_RMarkov_Cmarkovstsen_gs", (DL_FUNC) &_RMarkov_Cmarkovstsen_gs, 7},
+    {"_RMarkov_Ctran_unif_vec", (DL_FUNC) &_RMarkov_Ctran_unif_vec, 8},
+    {"_RMarkov_Ctran_unif_mat", (DL_FUNC) &_RMarkov_Ctran_unif_mat, 8},
+    {"_RMarkov_Ctran_unif_rwd_vec_vec", (DL_FUNC) &_RMarkov_Ctran_unif_rwd_vec_vec, 9},
+    {"_RMarkov_Ctran_unif_rwd_vec_mat", (DL_FUNC) &_RMarkov_Ctran_unif_rwd_vec_mat, 9},
+    {"_RMarkov_Ctran_unif_rwd_mat_mat", (DL_FUNC) &_RMarkov_Ctran_unif_rwd_mat_mat, 9},
     {"_RMarkov_Cmexp_mix_unif_vec", (DL_FUNC) &_RMarkov_Cmexp_mix_unif_vec, 8},
     {"_RMarkov_Cmexp_mix_unif_mat", (DL_FUNC) &_RMarkov_Cmexp_mix_unif_mat, 8},
     {"_RMarkov_Cmexpint_mix_unif_vec", (DL_FUNC) &_RMarkov_Cmexpint_mix_unif_vec, 8},
     {"_RMarkov_Cmexpint_mix_unif_mat", (DL_FUNC) &_RMarkov_Cmexpint_mix_unif_mat, 8},
     {"_RMarkov_Cmexp_unif_vec", (DL_FUNC) &_RMarkov_Cmexp_unif_vec, 7},
     {"_RMarkov_Cmexp_unif_mat", (DL_FUNC) &_RMarkov_Cmexp_unif_mat, 7},
-    {"_RMarkov_Cmexpint_unif_vec", (DL_FUNC) &_RMarkov_Cmexpint_unif_vec, 7},
-    {"_RMarkov_Cmexpint_unif_mat", (DL_FUNC) &_RMarkov_Cmexpint_unif_mat, 7},
+    {"_RMarkov_Cmexpint_unif_vec", (DL_FUNC) &_RMarkov_Cmexpint_unif_vec, 8},
+    {"_RMarkov_Cmexpint_unif_mat", (DL_FUNC) &_RMarkov_Cmexpint_unif_mat, 8},
     {"_RMarkov_C_ddot", (DL_FUNC) &_RMarkov_C_ddot, 2},
     {"_RMarkov_C_ddot2", (DL_FUNC) &_RMarkov_C_ddot2, 2},
     {"_RMarkov_C_dasum", (DL_FUNC) &_RMarkov_C_dasum, 1},

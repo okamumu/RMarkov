@@ -43,12 +43,13 @@ mexpAx <- function(A, x, t = 1.0, transpose = FALSE,
 #' Integral of matrix exponential with uniformization
 #'
 #' This is the function to compute the following matrix exponential with uniformization:
-#' \deqn{y = \exp(Au) x} and \deqn{cy = \int_0^t \exp(Au) du x}
+#' \deqn{y = \exp(Au) x} and \deqn{cy = cx + \int_0^t \exp(Au) du x}
 #'
 #'
 #' @param A A square matrix. This is one of matrix, dgeMatrix, dgCMatrix, dgRMatrix and dgTMatrix
 #' @param x A vector or matrix.
 #' @param t A value.
+#' @param cx A vector or matrix.
 #' @param transpose A logical. If TRUE, the matrix A is transposed. The default is FALSE.
 #' @param ufact A numeric value for the uniformization factor.
 #' @param eps A numeric value for tolerance error.
@@ -58,7 +59,7 @@ mexpAx <- function(A, x, t = 1.0, transpose = FALSE,
 #' the matrix class of \code{A} is directly used.
 #' @export
 
-cmexpAx <- function(A, x, t = 1.0, transpose = FALSE,
+cmexpAx <- function(A, x, t = 1.0, cx, transpose = FALSE,
                     eps = sqrt(.Machine$double.eps), ufact = 1.01,
                     rmax = 1000, matrix.class = NULL) {
   if (!is.null(matrix.class)) {
@@ -74,8 +75,14 @@ cmexpAx <- function(A, x, t = 1.0, transpose = FALSE,
     x <- diag(1, dim(A)[1L])
 
   if (is.matrix(x)) {
+    if (missing(cx)) {
+      cx <- matrix(0, nrow(x), ncol(x))
+    }
     Cmexpint_unif_mat(transpose, A, x, t, ufact, eps, rmax)
   } else if (is.vector(x)) {
+    if (missing(cx)) {
+      cx <- numeric(length(x))
+    }
     Cmexpint_unif_vec(transpose, A, x, t, ufact, eps, rmax)
   } else {
     stop("v should be vector or matrix")

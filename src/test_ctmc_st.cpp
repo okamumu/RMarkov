@@ -1,5 +1,4 @@
-#include <marlib.h>
-
+#include "marlib_Rcpp.h"
 using namespace Rcpp;
 
 // general
@@ -8,9 +7,8 @@ template <typename T1, typename MatT>
 NumericVector C_gth(T1 Q) {
   const int n = marlib::nrow(Q, MatT());
   NumericMatrix A(n,n);
-  marlib::dcopy(Q, A, MatT(), marlib::DenseMatrixT());
   NumericVector x(n);
-  marlib::gth_impl(A, x);
+  marlib::ctmc_st_gth(Q, A, x, MatT());
   return x;
 }
 

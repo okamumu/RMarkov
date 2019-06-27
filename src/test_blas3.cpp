@@ -1,6 +1,4 @@
-
-#include <marlib.h>
-
+#include "marlib_Rcpp.h"
 using namespace Rcpp;
 
 //' @export

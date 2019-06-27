@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BLAS3_H
+#define BLAS3_H
 
 namespace marlib {
 
@@ -63,4 +64,6 @@ void dgemm(TRANS, TRANS, double alpha, const T1& A, const T2& B, double beta, T3
 }
 
 }
+
+#endif
 

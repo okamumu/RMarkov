@@ -1,7 +1,5 @@
-#include <Rcpp.h>
+#include "marlib_Rcpp.h"
 using namespace Rcpp;
-
-#include <marlib.h>
 
 //' @export
 // [[Rcpp::export]]

@@ -1,0 +1,174 @@
+---
+  output: github_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# RMarkov
+
+RMarkov is a package for computing steady-state and transient solutions of Markov chaings. Mainly, the package offers the computation funcsions for continuous-time Markov chian (CTMC).
+
+## Installation
+
+You can install Rsrat from github with:
+
+```{r gh-installation, eval = FALSE}
+install.packages("devtools")
+devtools::install_github("okamumu/RMarkov")
+```
+
+Load the library. This package requires Matrix and deformula packages.
+
+```{r load}
+library(RMarkov)
+```
+
+## Steady-state analysis
+
+### Steady-state solution of CTMC
+
+Let's consider a CTMC with the following infinitesimal generator:
+
+```{r ctmc1}
+Q <- rbind(
+  c(-5,2,3,0,0),
+  c(1,-4,3,0,0),
+  c(0,2,-3,1,0),
+  c(0,0,1,-2,1),
+  c(0,0,1,4,-5)
+)
+```
+
+Get the steady-state solution with GTH algorithm. This is efficient to obtain the steady-state solution of a small-sized CTMC.
+
+```{r gth}
+ctmc.st.gth(Q)
+```
+
+Get the steady-state solution with GS algorithm. This is used when the CTMC is larege. Note that the matrix Q should be `CsparseMatrix (dgCMatrix)` or `dgeMatrix` when we apply `ctmc.st.gs`.
+
+```{r gs}
+ctmc.st.gs(Q)
+```
+
+### Sensitivity function of steady-state solution
+
+The sensitivity function or high-ordered sensitivity function are defined by the first or higher derivatives of the steady-state solution. Now we have the first derivative of Q with respect to a parameter:
+
+```{r dq}
+dQ <- rbind(
+  c(-1,1,0,0,0),
+  c(0,-1,1,0,0),
+  c(0,0,-1,1,0),
+  c(0,0,0,-1,1),
+  c(0,0,0,0,0)
+)
+```
+
+Get the sensitivity function (the first derivative of steady-state probability)
+
+```{r stsen}
+pis <- ctmc.st.gth(Q)
+ctmc.stsen.gs(Q, pis, pis %*% dQ)
+```
+
+### Quasi-stationary solution
+
+If the underlying CTMC has absorbing states, limiting probabilities go to any of absorbing states. The quasi stationary solution is a probability vector provided that the state does not go to absorbing states even if time goes to infinity.
+
+Let T be the infinitesimal generator over transient states for the CTMC with absorbing states.
+
+```{r qu}
+T <- rbind(
+  c(-5,2,0,0,0),
+  c(1,-4,3,0,0),
+  c(0,2,-3,1,0),
+  c(0,0,1,-2,1),
+  c(0,0,0,4,-5)
+)
+```
+
+The quasi stationary can be obtained by power method
+
+```{r qs}
+res <- ctmc.st.power(T)
+print(res)
+```
+
+## Transient analysis
+
+### Probability vector
+
+Let's consider the same CTMC.
+
+```{r ctmc2}
+Q <- rbind(
+  c(-5,2,3,0,0),
+  c(1,-4,3,0,0),
+  c(0,2,-3,1,0),
+  c(0,0,1,-2,1),
+  c(0,0,1,4,-5)
+)
+```
+
+The initial probability vector is given by
+
+```{r init}
+x0 <- c(1,0,0,0,0)
+```
+
+Get the transient solution with uniformization.
+
+```{r tran1}
+ctmc.tran.unif(Q=Q, x=x0, t=seq(0,1,length.out = 10))
+```
+
+The reward vector is
+
+```{r rwd}
+r <- c(0,1,2,3,4)
+```
+
+```{r tran2}
+res <- ctmc.tran.rwd.unif(Q=Q, x=x0, t=seq(0,20,length.out = 1000), r=r)
+data <- data.frame(time=res$t, instantaneous=res$irwd, average=res$crwd / res$t)
+head(data, 10)
+```
+
+```{r rwdplot1}
+library(ggplot2)
+data_long <- tidyr::gather(data, key="type", value=reward, -time)
+ggplot(data=data_long, aes(x=time, y=reward, colour=type)) + geom_line()
+```
+
+### Sensitivity for transient solution
+
+As similar to the previous section, we have the first derivative of Q with respect to a parameter:
+
+```{r dq2}
+dQ <- rbind(
+  c(-1,1,0,0,0),
+  c(0,-1,1,0,0),
+  c(0,0,-1,1,0),
+  c(0,0,0,-1,1),
+  c(0,0,0,0,0)
+)
+```
+
+The sensitivity function of transient solution can be obtained from the following expanded infinitesimal generator.
+
+```{r transen}
+Qdash <- rbind2(cbind2(Q, dQ), cbind2(RMarkov::zeroM(5), Q))
+x0dash <- c(x0, rep(0,5))
+rdash <- c(rep(0,5), r)
+res <- ctmc.tran.rwd.unif(Q=Qdash, x=x0dash, t=seq(0,20,length.out = 1000), r=rdash)
+print(res)
+```
+

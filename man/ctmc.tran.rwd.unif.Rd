@@ -4,7 +4,7 @@
 \alias{ctmc.tran.rwd.unif}
 \title{Uniformization for transient analysis of countinuous-time Markov chains (CTMCs) with rewards}
 \usage{
-ctmc.tran.rwd.unif(Q, x, r, t, transpose = TRUE,
+ctmc.tran.rwd.unif(Q, x, r, t, cx, transpose = TRUE,
   eps = sqrt(.Machine$double.eps), ufact = 1.01, rmax = 1000,
   matrix.class = NULL)
 }
@@ -16,6 +16,8 @@ ctmc.tran.rwd.unif(Q, x, r, t, transpose = TRUE,
 \item{r}{A numeric vector or matrix indicating the reward.}
 
 \item{t}{A nemeric vector, indicating the time sequence, which should be a non-increasing.}
+
+\item{cx}{An initial cumulative vector or a matrix.}
 
 \item{transpose}{A logical, indicating the matrix Q is transposed or not. The default is TRUE.}
 

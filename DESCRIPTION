@@ -1,5 +1,5 @@
 Package: RMarkov
-Version: 0.11.0
+Version: 0.11.1
 Date: 2018-6-26
 Title: Numerical Computation of Markov Chains
 Type: Package
@@ -8,7 +8,7 @@ Maintainer: Hiroyuki Okamura <okamu@hiroshima-u.ac.jp>
 Description: Stationary and transient solutions of Markov chains.
 Depends: Matrix
 LinkingTo: Rcpp
-Imports: Rcpp, deformula
+Imports: Rcpp, deformula, methods
 Suggests: testthat
 Encoding: UTF-8
 License: MIT + file LICENSE

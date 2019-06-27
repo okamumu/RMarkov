@@ -1,8 +1,4 @@
-#include <Rcpp.h>
-using namespace Rcpp;
-
-#include <marlib.h>
-
+#include "marlib_Rcpp.h"
 using namespace Rcpp;
 
 /**
@@ -21,36 +17,13 @@ List Cmarkovstsen_gs(T1 Q, NumericVector x0, NumericVector b, NumericVector pis,
     stop("Vector x0 should be the same dimension of Q.");
   }
   NumericVector x = clone(x0);
-  NumericVector prevx(n);
-  int iter = 0;
-  int info = 1;
-  double rerror;
-
-  while(1) {
-    marlib::dcopy(x, prevx);
-    for (int i=0; i<steps; i++) {
-      marlib::gsstep(marlib::TRANS(), -1.0, Q, 0.0, 1.0, b, x, MatT(), marlib::ArrayT());
-      double tmp = marlib::dsum(x);
-      marlib::daxpy(-tmp, pis, x);
-    }
-    marlib::daxpy(-1.0, x, prevx);
-    iter += steps;
-    rerror = Rcpp::max(Rcpp::abs(prevx/x));
-    if (rerror < rtol) {
-      info = 0;
-      break;
-    }
-    if (iter >= maxiter) {
-      info = -1;
-      break;
-    }
-    R_CheckUserInterrupt();
-  }
+  marlib::ctmc_st_params params(rtol, steps, maxiter);
+  marlib::ctmc_stsen_gs(Q, x, b, pis, params, [](marlib::ctmc_st_params){R_CheckUserInterrupt();}, MatT());
   return List::create(
     Named("x")=x,
-    Named("convergence")=(info==0),
-    Named("iter")=iter,
-    Named("rerror")=rerror
+    Named("convergence")=(params.info==0),
+    Named("iter")=params.iter,
+    Named("rerror")=params.rerror
   );
 }
 

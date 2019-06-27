@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GSSTEP_H
+#define GSSTEP_H
 
 namespace marlib {
 
@@ -34,7 +35,7 @@ void gsstep(NOTRANS, double alpha, const T1& A, double sigma,
   const int incb = traits2::inc(b);
   double* valueX = traits3::value(x);
   const int incx = traits3::inc(x);
-  
+
   double* xptr0 = valueX;
   for (int i=1; i<=n; i++, valueA+=1, valueB+=incb, xptr0+=incx) {
     double tmpd = 0.0;
@@ -51,7 +52,7 @@ void gsstep(NOTRANS, double alpha, const T1& A, double sigma,
     }
     *xptr0 = (omega/tmpd) * tmpx + (1.0-omega) * *xptr0;
   }
-  
+
 }
 
 template<typename T1, typename T2, typename T3>
@@ -68,7 +69,7 @@ void gsstep(TRANS, double alpha, const T1& A, double sigma,
   const int incb = traits2::inc(b);
   double* valueX = traits3::value(x);
   const int incx = traits3::inc(x);
-  
+
   double* xptr0 = valueX;
   for (int j=1; j<=n; j++, valueA+=lda, valueB+=incb, xptr0+=incx) {
     double tmpd = 0.0;
@@ -85,7 +86,7 @@ void gsstep(TRANS, double alpha, const T1& A, double sigma,
     }
     *xptr0 = (omega/tmpd) * tmpx + (1.0-omega) * *xptr0;
   }
-  
+
 }
 
 template<typename T1, typename T2, typename T3>
@@ -104,7 +105,7 @@ void gsstep(NOTRANS, double alpha, const T1& A, double sigma,
   const int incb = traits2::inc(b);
   double* valueX = traits3::value(x);
   const int incx = traits3::inc(x);
-  
+
   for (int i=0; i<n; i++, valueB+=incb) {
     double tmpd = 0.0;
     double tmpx = *valueB / alpha;
@@ -137,7 +138,7 @@ void gsstep(TRANS, double alpha, const T1& A, double sigma,
   const int incb = traits2::inc(b);
   double* valueX = traits3::value(x);
   const int incx = traits3::inc(x);
-  
+
   for (int j=0; j<n; j++, valueB+=incb) {
     double tmpd = 0.0;
     double tmpx = *valueB / alpha;
@@ -165,10 +166,12 @@ void gsstep(TR, double alpha, const T1& A, double sigma,
   const int ldb = traits2::ld(b);
   double* valueX = traits3::value(x);
   const int ldx = traits3::ld(x);
-  
+
   for (int i=0; i<n; i++, valueB+=ldb, valueX+=ldx) {
     gsstep(TR(), alpha, A, sigma, omega, valueB, valueX, T4(), ArrayT());
   }
 }
 
 }
+
+#endif

@@ -3,7 +3,8 @@
   * @brief A wrapper for f77blas
   */
 
-#pragma once
+#ifndef MARLIB_F77BLASW_H
+#define MARLIB_F77BLASW_H
 
 namespace marlib {
 
@@ -77,15 +78,6 @@ namespace marlib {
   }
 
   inline
-  double f77dsum(int n, const double *x, int incx) {
-    double tmp = 0.0;
-    for (int i=0; i<n; i++, x+=incx) {
-      tmp += *x;
-    }
-    return tmp;
-  }
-
-  inline
   double f77dnrm2(int n, const double *x, int incx) {
     return dnrm2_(&n, x, &incx);
   }
@@ -122,3 +114,5 @@ namespace marlib {
   }
 
 }
+
+#endif

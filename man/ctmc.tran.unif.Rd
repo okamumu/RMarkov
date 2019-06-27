@@ -4,7 +4,7 @@
 \alias{ctmc.tran.unif}
 \title{Uniformization for transient analysis of countinuous-time Markov chains (CTMCs)}
 \usage{
-ctmc.tran.unif(Q, x, t, transpose = TRUE,
+ctmc.tran.unif(Q, x, t, cx, transpose = TRUE,
   eps = sqrt(.Machine$double.eps), ufact = 1.01, rmax = 1000,
   matrix.class = NULL)
 }
@@ -15,6 +15,8 @@ ctmc.tran.unif(Q, x, t, transpose = TRUE,
 
 \item{t}{A nemeric vector, indicating the time sequence, which should be a non-increasing.}
 
+\item{cx}{An initial probability vector or a matrix for initial cumulative vectors.}
+
 \item{transpose}{A logical, indicating the matrix Q is transposed or not. The default is TRUE.}
 
 \item{eps}{A numeric value of tolarence error in both uniformization, which determines the rightboud of Poisson distribution.}
@@ -24,8 +26,6 @@ ctmc.tran.unif(Q, x, t, transpose = TRUE,
 \item{rmax}{An integer, indicating the maximum number of rightbound of Poisson distribution in uniformization (see details).}
 
 \item{matrix.class}{A string character, indicating the class of Matrix for the computation.}
-
-\item{r}{A numeric vector or matrix indicating the reward.}
 }
 \value{
 The function returs the following list.

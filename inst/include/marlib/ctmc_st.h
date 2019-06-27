@@ -1,6 +1,5 @@
-#pragma once
-
-#include "traits.h"
+#ifndef MARLIB_CTMC_ST_H
+#define MARLIB_CTMC_ST_H
 
 namespace marlib {
 
@@ -9,8 +8,8 @@ double& elemA(int i, int j, double* value, int ld) {
   return value[i-1+(j-1)*ld];
 }
 
-template <typename T1, typename T2>
-void gth_impl(T1& A, T2& x) {
+template <typename T1, typename T2, typename MatT>
+void ctmc_st_gth(T1& A, T2& x, MatT) {
   using traits1 = vector_traits<T2>;
   using traits2 = dense_matrix_traits<T1>;
   const int n = traits1::size(x);
@@ -59,4 +58,72 @@ void gth_impl(T1& A, T2& x) {
   dscal(1.0/total, x);
 }
 
+template <typename T1, typename T2, typename T3, typename MatT>
+void ctmc_st_gth(const T1& Q, T2& A, T3& x, MatT) {
+  dcopy(Q, A, MatT(), DenseMatrixT());
+  ctmc_st_gth(A, x, MatT());
 }
+
+template <typename T1, typename T2, typename Params, typename Func, typename MatT>
+void ctmc_st_power(const T1& P, T2& x, Params& params, const Func& callback, MatT) {
+  using traits1 = vector_traits<T2>;
+  int n = traits1::size(x);
+  std::vector<double> tmpv(n);
+  std::vector<double> prevx(n);
+  params.iter = 0;
+  params.info = 1;
+  while(1) {
+    dcopy(x, prevx);
+    for (int i=0; i<params.steps; i++) {
+      dcopy(x, tmpv);
+      dgemv(TRANS(), 1.0, P, tmpv, 0.0, x, MatT());
+      double tmp = dasum(x);
+      dscal(1.0/tmp, x);
+    }
+    params.rerror = drerr(prevx, x);
+    params.iter += params.steps;
+    if (params.rerror < params.rtol) {
+      params.info = 0;
+      break;
+    }
+    if (params.iter >= params.maxiter) {
+      params.info = -1;
+      break;
+    }
+    callback(params);
+  }
+}
+
+template <typename T1, typename T2, typename Params, typename Func, typename MatT>
+void ctmc_st_gs(const T1& Q, T2& x, Params& params, const Func& callback, MatT) {
+  using traits1 = vector_traits<T2>;
+  int n = traits1::size(x);
+  std::vector<double> b(n, 0.0);
+  std::vector<double> prevx(n);
+  params.iter = 0;
+  params.info = 1;
+  while(1) {
+    dcopy(x, prevx);
+    for (int i=0; i<params.steps; i++) {
+      gsstep(TRANS(), 1.0, Q, 0.0, 1.0, b, x, MatT(), ArrayT());
+      double tmp = dasum(x);
+      dscal(1.0/tmp, x);
+    }
+    params.rerror = drerr(prevx, x);
+    params.iter += params.steps;
+    if (params.rerror < params.rtol) {
+      params.info = 0;
+      break;
+    }
+    if (params.iter >= params.maxiter) {
+      params.info = -1;
+      break;
+    }
+    callback(params);
+  }
+}
+
+}
+
+#endif
+
