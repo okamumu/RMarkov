@@ -3,8 +3,8 @@
  * @brief Compute p.m.f. of poisson distribution
  * */
 
-#ifndef POISSON_H
-#define POISSON_H
+#ifndef MARLIB_POISSON_H
+#define MARLIB_POISSON_H
 
 #include <cmath>
 

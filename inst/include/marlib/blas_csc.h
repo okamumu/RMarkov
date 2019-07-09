@@ -1,5 +1,5 @@
-#ifndef BLAS_CSC_H
-#define BLAS_CSC_H
+#ifndef MARLIB_BLAS_CSC_H
+#define MARLIB_BLAS_CSC_H
 
 namespace marlib {
 

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MARLIB_BLAS_CSR_H
+#define MARLIB_BLAS_CSR_H
 
 namespace marlib {
 
@@ -376,3 +377,5 @@ namespace marlib {
   }
 
 }
+
+#endif

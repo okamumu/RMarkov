@@ -1,5 +1,5 @@
-#ifndef GSSTEP_H
-#define GSSTEP_H
+#ifndef MARLIB_GSSTEP_H
+#define MARLIB_GSSTEP_H
 
 namespace marlib {
 
