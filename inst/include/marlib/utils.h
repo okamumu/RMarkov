@@ -276,26 +276,21 @@ void diag_set(T1& A, const T2& x, COOMatrixT) {
 
 /// parameters
 
-struct ctmc_st_params {
-  int steps;
-  double rtol;
-  int maxiter;
-  int iter;
-  int info;
-  double rerror;
-
-  ctmc_st_params(double rtol, int steps, int maxiter)
-    : steps(steps), rtol(rtol), maxiter(maxiter), iter(0), info(0), rerror(0.0) {}
-};
-
-struct mexp_params {
+struct marlib_params {
   double ufact;
   double eps;
   int rmax;
+  double rtol;
+  int steps;
+  int maxiter;
+  int iter;
+  int info;
   int r;
+  double rerror;
 
-  mexp_params(double ufact, double eps, int rmax)
-    : ufact(ufact), eps(eps), rmax(rmax), r(0) {}
+  marlib_params()
+    : ufact(1.01), eps(1.0e-8), rmax(1000), rtol(1.0e-8), steps(10), maxiter(2000),
+      iter(0), info(0), r(0), rerror(0.0) {}
 };
 
 ///// vector functions

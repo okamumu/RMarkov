@@ -6,9 +6,8 @@ using namespace Rcpp;
 template <typename T1, typename MatT>
 NumericVector C_gth(T1 Q) {
   const int n = marlib::nrow(Q, MatT());
-  NumericMatrix A(n,n);
   NumericVector x(n);
-  marlib::ctmc_st_gth(Q, A, x, MatT());
+  marlib::ctmc_st_gth(Q, x, MatT());
   return x;
 }
 

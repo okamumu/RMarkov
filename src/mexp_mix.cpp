@@ -8,10 +8,13 @@ T2 mexp_mix_unif(TR, const T1& A, const T2& x, const T3& w, const T4& t,
   T1 P = clone(A);
   T2 v = clone(x);
   T2 y = clone(x);
-  marlib::mexp_params params(ufact, eps, rmax);
+  marlib::marlib_params params;
+  params.ufact = ufact;
+  params.eps = eps;
+  params.rmax = rmax;
   marlib::mexp_mix(TR(), P, v, y, w, t, params,
-                   [](marlib::mexp_params params){ stop("Time interval is too large: right = %d (rmax: %d).", params.r, params.rmax); },
-                   [](marlib::mexp_params){ R_CheckUserInterrupt(); },
+                   [](marlib::marlib_params params){ stop("Time interval is too large: right = %d (rmax: %d).", params.r, params.rmax); },
+                   [](marlib::marlib_params){ R_CheckUserInterrupt(); },
                    MatT(), VecT());
   return y;
 }
@@ -25,10 +28,13 @@ List mexpint_mix_unif(TR, const T1& A, const T2& x, const T3& w, const T4& t,
   T2 y = clone(x);
   T2 cv = clone(x);
   T2 cy = clone(x);
-  marlib::mexp_params params(ufact, eps, rmax);
+  marlib::marlib_params params;
+  params.ufact = ufact;
+  params.eps = eps;
+  params.rmax = rmax;
   marlib::mexpint_mix(TR(), P, v, cv, y, cy, w, t, params,
-                      [](marlib::mexp_params params){ stop("Time interval is too large: right = %d (rmax: %d).", params.r, params.rmax); },
-                      [](marlib::mexp_params){ R_CheckUserInterrupt(); },
+                      [](marlib::marlib_params params){ stop("Time interval is too large: right = %d (rmax: %d).", params.r, params.rmax); },
+                      [](marlib::marlib_params){ R_CheckUserInterrupt(); },
                       MatT(), VecT());
   return List::create(Named("y")=y, Named("cy")=cy);
 }

@@ -131,23 +131,5 @@ void ctmc_tran_rwd(TR, T1& P, T2& x, T3& cx, const T4& rwd, const T5& t,
 
 }
 
-
-// template <typename TR, typename T1, typename T2, typename T3, typename T4,
-//           typename MatT, typename VecT1, typename VecT2>
-// List tran_unif_rwd(TR, const T1& Q, const T2& x0, const T3& rwd, int s, const T4& t,
-//                    double ufact, double eps, int rmax, MatT, VecT1, VecT2) {
-//   using traits1 = vector_traits<T4>;
-//   const int m = traits1::size(t);
-//   const double* valueT = traits1::value(t);
-//   const int inct = traits1::inc(t);
-//   NumericVector res_irwd(s*m);
-//   NumericVector res_crwd(s*m);
-//
-//   T1 P = clone(Q);
-//   T2 xi = clone(x0);
-//   T2 tmp = clone(x0);
-//   T2 x = clone(x0);
-//   T2 cx = clone(x0);
-//
 #endif
 

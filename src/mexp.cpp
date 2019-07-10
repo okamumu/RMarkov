@@ -5,9 +5,12 @@ template <typename TR, typename T1, typename T2, typename MatT, typename VecT>
 T2 mexp_unif(TR, const T1& A, T2 x, double t, double ufact, double eps, int rmax, MatT, VecT) {
   T1 P = clone(A);
   T2 y = clone(x);
-  marlib::mexp_params params(ufact, eps, rmax);
+  marlib::marlib_params params;
+  params.ufact = ufact;
+  params.eps = eps;
+  params.rmax = rmax;
   marlib::mexp_func(TR(), P, x, y, t, params,
-            [](const marlib::mexp_params& params){
+            [](const marlib::marlib_params& params){
               stop("Time interval is too large: right = %d (rmax: %d).", params.r, params.rmax);
               },
             MatT(), VecT());
@@ -20,9 +23,12 @@ List mexpint_unif(TR, const T1& A, const T2& x, const T3& cx,
   T1 P = clone(A);
   T2 y = clone(x);
   T2 cy = clone(cx);
-  marlib::mexp_params params(ufact, eps, rmax);
+  marlib::marlib_params params;
+  params.ufact = ufact;
+  params.eps = eps;
+  params.rmax = rmax;
   marlib::mexpint_func(TR(), P, x, y, cy, t, params,
-                      [](const marlib::mexp_params& params){
+                      [](const marlib::marlib_params& params){
                         stop("Time interval is too large: right = %d (rmax: %d).", params.r, params.rmax);
                       },
                       MatT(), VecT());

@@ -37,22 +37,6 @@ Ctran_unif_rwd_mat_mat <- function(trans, A, x0, cx0, rwd, t, ufact, eps, rmax) 
     .Call('_RMarkov_Ctran_unif_rwd_mat_mat', PACKAGE = 'RMarkov', trans, A, x0, cx0, rwd, t, ufact, eps, rmax)
 }
 
-Cmexp_mix_unif_vec <- function(trans, A, x, w, t, ufact, eps, rmax) {
-    .Call('_RMarkov_Cmexp_mix_unif_vec', PACKAGE = 'RMarkov', trans, A, x, w, t, ufact, eps, rmax)
-}
-
-Cmexp_mix_unif_mat <- function(trans, A, x, w, t, ufact, eps, rmax) {
-    .Call('_RMarkov_Cmexp_mix_unif_mat', PACKAGE = 'RMarkov', trans, A, x, w, t, ufact, eps, rmax)
-}
-
-Cmexpint_mix_unif_vec <- function(trans, A, x, w, t, ufact, eps, rmax) {
-    .Call('_RMarkov_Cmexpint_mix_unif_vec', PACKAGE = 'RMarkov', trans, A, x, w, t, ufact, eps, rmax)
-}
-
-Cmexpint_mix_unif_mat <- function(trans, A, x, w, t, ufact, eps, rmax) {
-    .Call('_RMarkov_Cmexpint_mix_unif_mat', PACKAGE = 'RMarkov', trans, A, x, w, t, ufact, eps, rmax)
-}
-
 Cmexp_unif_vec <- function(trans, A, x, t, ufact, eps, rmax) {
     .Call('_RMarkov_Cmexp_unif_vec', PACKAGE = 'RMarkov', trans, A, x, t, ufact, eps, rmax)
 }
@@ -67,6 +51,22 @@ Cmexpint_unif_vec <- function(trans, A, x, cx, t, ufact, eps, rmax) {
 
 Cmexpint_unif_mat <- function(trans, A, x, cx, t, ufact, eps, rmax) {
     .Call('_RMarkov_Cmexpint_unif_mat', PACKAGE = 'RMarkov', trans, A, x, cx, t, ufact, eps, rmax)
+}
+
+Cmexp_mix_unif_vec <- function(trans, A, x, w, t, ufact, eps, rmax) {
+    .Call('_RMarkov_Cmexp_mix_unif_vec', PACKAGE = 'RMarkov', trans, A, x, w, t, ufact, eps, rmax)
+}
+
+Cmexp_mix_unif_mat <- function(trans, A, x, w, t, ufact, eps, rmax) {
+    .Call('_RMarkov_Cmexp_mix_unif_mat', PACKAGE = 'RMarkov', trans, A, x, w, t, ufact, eps, rmax)
+}
+
+Cmexpint_mix_unif_vec <- function(trans, A, x, w, t, ufact, eps, rmax) {
+    .Call('_RMarkov_Cmexpint_mix_unif_vec', PACKAGE = 'RMarkov', trans, A, x, w, t, ufact, eps, rmax)
+}
+
+Cmexpint_mix_unif_mat <- function(trans, A, x, w, t, ufact, eps, rmax) {
+    .Call('_RMarkov_Cmexpint_mix_unif_mat', PACKAGE = 'RMarkov', trans, A, x, w, t, ufact, eps, rmax)
 }
 
 #' @export

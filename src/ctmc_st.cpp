@@ -8,10 +8,9 @@ NumericVector Cmarkovst_gth(T1 Q, MatT) {
   if (m != n) {
     stop("Matrix Q should be a square matrix.");
   }
-  NumericMatrix A(n,n);
   NumericVector x(n);
 
-  marlib::ctmc_st_gth(Q, A, x, MatT());
+  marlib::ctmc_st_gth(Q, x, MatT());
   return x;
 }
 
@@ -27,10 +26,12 @@ List Cmarkovst_power(const T1& Q, NumericVector x0, double ufact, int steps, dou
   }
   T1 P = clone(Q);
   NumericVector x = clone(x0);
-  NumericVector tmpv(n);
-  unif(P, ufact, tmpv, MatT());
-  marlib::ctmc_st_params params(rtol, steps, maxiter);
-  marlib::ctmc_st_power(P, x, params, [](marlib::ctmc_st_params){R_CheckUserInterrupt();}, MatT());
+  marlib::marlib_params params;
+  params.rtol = rtol;
+  params.steps = steps;
+  params.maxiter = maxiter;
+  params.ufact = ufact;
+  marlib::ctmc_st_power(P, x, params, [](marlib::marlib_params){R_CheckUserInterrupt();}, MatT());
   return List::create(
     Named("x")=x,
     Named("convergence")=(params.info==0),
@@ -50,8 +51,11 @@ List Cmarkovst_gs(const T1& Q, NumericVector x0, int steps, double rtol, int max
     stop("Vector x0 should be the same dimension of Q.");
   }
   NumericVector x = clone(x0);
-  marlib::ctmc_st_params params(rtol, steps, maxiter);
-  marlib::ctmc_st_gs(Q, x, params, [](marlib::ctmc_st_params){R_CheckUserInterrupt();}, MatT());
+  marlib::marlib_params params;
+  params.rtol = rtol;
+  params.steps = steps;
+  params.maxiter = maxiter;
+  marlib::ctmc_st_gs(Q, x, params, [](marlib::marlib_params){R_CheckUserInterrupt();}, MatT());
   return List::create(
     Named("x")=x,
     Named("convergence")=(params.info==0),

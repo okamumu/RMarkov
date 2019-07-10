@@ -33,51 +33,6 @@ void ctmc_stsen_gs(const T1& Q, T2& x, const T3& b, const T4& pis,
   }
 }
 
-// template <typename T1, typename MatT>
-// List Cmarkovst_gs(const T1& Q, NumericVector x0, int steps, double rtol, int maxiter, MatT) {
-//   const int m = marlib::nrow(Q, MatT());
-//   const int n = marlib::ncol(Q, MatT());
-//   if (m != n) {
-//     stop("Matrix Q should be a square matrix.");
-//   }
-//   if (n != x0.size()) {
-//     stop("Vector x0 should be the same dimension of Q.");
-//   }
-//   NumericVector b(n);
-//   NumericVector x = clone(x0);
-//   NumericVector prevx(n);
-//   int iter = 0;
-//   int info = 1;
-//   double rerror;
-//
-//   while(1) {
-//     marlib::dcopy(x, prevx);
-//     for (int i=0; i<steps; i++) {
-//       marlib::gsstep(marlib::TRANS(), 1.0, Q, 0.0, 1.0, b, x, MatT(), marlib::ArrayT());
-//       double tmp = marlib::dasum(x);
-//       marlib::dscal(1.0/tmp, x);
-//     }
-//     marlib::daxpy(-1.0, x, prevx);
-//     iter += steps;
-//     rerror = Rcpp::max(Rcpp::abs(prevx/x));
-//     if (rerror < rtol) {
-//       info = 0;
-//       break;
-//     }
-//     if (iter >= maxiter) {
-//       info = -1;
-//       break;
-//     }
-//     R_CheckUserInterrupt();
-//   }
-//   return List::create(
-//     Named("x")=x,
-//     Named("convergence")=(info==0),
-//     Named("iter")=iter,
-//     Named("rerror")=rerror
-//   );
-// }
-
 }
 
 #endif

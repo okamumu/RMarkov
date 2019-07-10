@@ -17,8 +17,11 @@ List Cmarkovstsen_gs(T1 Q, NumericVector x0, NumericVector b, NumericVector pis,
     stop("Vector x0 should be the same dimension of Q.");
   }
   NumericVector x = clone(x0);
-  marlib::ctmc_st_params params(rtol, steps, maxiter);
-  marlib::ctmc_stsen_gs(Q, x, b, pis, params, [](marlib::ctmc_st_params){R_CheckUserInterrupt();}, MatT());
+  marlib::marlib_params params;
+  params.rtol = rtol;
+  params.steps = steps;
+  params.maxiter = maxiter;
+  marlib::ctmc_stsen_gs(Q, x, b, pis, params, [](marlib::marlib_params){R_CheckUserInterrupt();}, MatT());
   return List::create(
     Named("x")=x,
     Named("convergence")=(params.info==0),

@@ -13,11 +13,14 @@ List tran_unif(TR, const T1& Q, const T2& x0, const T2& cx0, const T3& t,
   T1 P = clone(Q);
   T2 x = clone(x0);
   T2 cx = clone(cx0);
-  marlib::mexp_params params(ufact, eps, rmax);
+  marlib::marlib_params params;
+  params.ufact = ufact;
+  params.eps = eps;
+  params.rmax = rmax;
   marlib::ctmc_tran(TR(), P, x, cx, t, res_x, res_cx,
                     params,
-                    [](marlib::mexp_params params){ stop("Time interval is too large: right = %d (rmax: %d).", params.r, params.rmax); },
-                    [](marlib::mexp_params){ R_CheckUserInterrupt(); },
+                    [](marlib::marlib_params params){ stop("Time interval is too large: right = %d (rmax: %d).", params.r, params.rmax); },
+                    [](marlib::marlib_params){ R_CheckUserInterrupt(); },
                     MatT(), VecT());
   return List::create(
     Named("x") = res_x,
