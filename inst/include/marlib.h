@@ -1,7 +1,7 @@
 #ifndef MARLIB_H
 #define MARLIB_H
 
-#include <cmath>
+#include <math.h>
 #include <type_traits>
 
 #include <marlib/f77blasw.h>
@@ -21,6 +21,7 @@
 #include <marlib/mexp.h>
 #include <marlib/mexp_mix.h>
 #include <marlib/ctmc_st.h>
+#include <marlib/ctmc_qst.h>
 #include <marlib/ctmc_stsen.h>
 #include <marlib/ctmc_tran.h>
 

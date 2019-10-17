@@ -1,6 +1,6 @@
 Package: RMarkov
-Version: 0.11.1
-Date: 2018-7-10
+Version: 0.11.2
+Date: 2019-10-17
 Title: Numerical Computation of Markov Chains
 Type: Package
 Author: Hiroyuki Okamura

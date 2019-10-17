@@ -1,3 +1,7 @@
+# RMarkov 0.11.2
+
+* Add GS for quasi stationary
+
 # RMarkov 0.11.1
 
 * Fix a bug: import(Rcpp), involving flibs

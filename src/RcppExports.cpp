@@ -5,6 +5,22 @@
 
 using namespace Rcpp;
 
+// Cmarkovqst_gs
+List Cmarkovqst_gs(S4 Q, NumericVector xi, NumericVector x0, int steps, double rtol, int maxiter);
+RcppExport SEXP _RMarkov_Cmarkovqst_gs(SEXP QSEXP, SEXP xiSEXP, SEXP x0SEXP, SEXP stepsSEXP, SEXP rtolSEXP, SEXP maxiterSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< S4 >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type xi(xiSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< int >::type steps(stepsSEXP);
+    Rcpp::traits::input_parameter< double >::type rtol(rtolSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    rcpp_result_gen = Rcpp::wrap(Cmarkovqst_gs(Q, xi, x0, steps, rtol, maxiter));
+    return rcpp_result_gen;
+END_RCPP
+}
 // Cmarkovst_gth
 NumericVector Cmarkovst_gth(S4 Q);
 RcppExport SEXP _RMarkov_Cmarkovst_gth(SEXP QSEXP) {
@@ -2029,6 +2045,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_RMarkov_Cmarkovqst_gs", (DL_FUNC) &_RMarkov_Cmarkovqst_gs, 6},
     {"_RMarkov_Cmarkovst_gth", (DL_FUNC) &_RMarkov_Cmarkovst_gth, 1},
     {"_RMarkov_Cmarkovst_power", (DL_FUNC) &_RMarkov_Cmarkovst_power, 6},
     {"_RMarkov_Cmarkovst_gs", (DL_FUNC) &_RMarkov_Cmarkovst_gs, 5},
