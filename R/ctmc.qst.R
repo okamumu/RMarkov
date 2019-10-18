@@ -7,6 +7,7 @@
 #' Since the GS maintains the sparse storage of matrix, it is suitable for solving the large-sized CTMC.
 #'
 #' @param Q A n-by-n matrix. A CTMC kernel. matrix, dgeMatrix and dgCMatrix are allowed.
+#' @param xi A numeric vector. The exit vector from transient states to an absorbing state, which is given by xi = - Q 1
 #' @param x0 A numeric vector. The inital vector for GS method.
 #' @param steps An integer. The algoritm checks the convergence every 'steps'.
 #' @param rtol A numeric value. The algorithm stops when the relative error is less than 'rtol'.
@@ -19,10 +20,10 @@
 #'   c(0, 2, -3, 1),
 #'   c(0, 0, 1, -1)
 #' )
-#' ctmc.qst.gs(Q, matrix.class="CsparseMatrix")
+#' ctmc.qst.gs(Q, xi=c(5,0,0,0), matrix.class="CsparseMatrix")
 #' @export
 
-ctmc.qst.gs <- function(Q, x0, maxiter = 5000L, steps = 50L,
+ctmc.qst.gs <- function(Q, xi, x0, maxiter = 5000L, steps = 50L,
                         rtol = sqrt(.Machine$double.eps),
                         matrix.class = NULL) {
 
@@ -35,7 +36,6 @@ ctmc.qst.gs <- function(Q, x0, maxiter = 5000L, steps = 50L,
   } else if (is.matrix(Q)) {
     Q <- as(Q, "dgeMatrix")
   }
-  xi <- -as.vector(Q %*% vone(dim(Q)[1L]))
-  Cmarkovqst_gs(Q, xi=xi, x0=x0, steps=steps, rtol=rtol, maxiter=maxiter)
+  Cmarkovqst_gs(Q, xi, x0=x0, steps=steps, rtol=rtol, maxiter=maxiter)
 }
 

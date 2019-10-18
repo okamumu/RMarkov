@@ -4,11 +4,13 @@
 \alias{ctmc.qst.gs}
 \title{Gauss-Seidal (GS) algorithm for the quasi-stationary solution of continuous-time Markov chain (CTMC)}
 \usage{
-ctmc.qst.gs(Q, x0, maxiter = 5000L, steps = 50L,
+ctmc.qst.gs(Q, xi, x0, maxiter = 5000L, steps = 50L,
   rtol = sqrt(.Machine$double.eps), matrix.class = NULL)
 }
 \arguments{
 \item{Q}{A n-by-n matrix. A CTMC kernel. matrix, dgeMatrix and dgCMatrix are allowed.}
+
+\item{xi}{A numeric vector. The exit vector from transient states to an absorbing state, which is given by xi = - Q 1}
 
 \item{x0}{A numeric vector. The inital vector for GS method.}
 
@@ -35,5 +37,5 @@ Q <- rbind(
   c(0, 2, -3, 1),
   c(0, 0, 1, -1)
 )
-ctmc.qst.gs(Q, matrix.class="CsparseMatrix")
+ctmc.qst.gs(Q, xi=c(5,0,0,0), matrix.class="CsparseMatrix")
 }
